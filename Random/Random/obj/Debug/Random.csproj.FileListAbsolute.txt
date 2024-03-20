@@ -1,0 +1,10 @@
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\bin\Debug\Random.exe.config
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\bin\Debug\Random.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\bin\Debug\Random.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\obj\Debug\Random.csproj.AssemblyReference.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\obj\Debug\Random.Form1.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\obj\Debug\Random.Properties.Resources.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\obj\Debug\Random.csproj.GenerateResource.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\obj\Debug\Random.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\obj\Debug\Random.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\Random\Random\obj\Debug\Random.pdb

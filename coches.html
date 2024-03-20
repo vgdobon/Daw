@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><select name="select" id="select" onchange="cambiarfoto()">
+                    <option value="amg-gt.png" id="amg">Mercedes AMG</option>
+                    <option value="bmw-m5.png" id="m5">BM M5</option>
+                    <option value="a6.jpg" id="a8">Audi A8</option>
+                    <option value="ferrari.png" id="ferrari">Ferrari</option>
+                </select></td>
+            <td>
+                <img id="imagen" src="images/amg-gt.png" height="500px" width="900px" alt="">
+            </td>
+        </tr>
+    </table>
+
+    <div id="contenedor">
+        <input class="button" type="button" value="Amarillo" name="yellow" onclick="cambiarColor('#e6fd32')">
+        <input class="button" type="button" value="Rojo" name="red" onclick="cambiarColor('#fc3f3f')">
+        <input class="button" type="button" value="Verde" name="green" onclick="cambiarColor('#37e22b')">
+    </div>
+
+    <input class="button" type="button" value="Amarillo" name="yellow" onclick="cambiarColor('#e6fd32')">
+    <input class="button" type="button" value="Rojo" name="red" onclick="cambiarColor('#fc3f3f')">
+    <input class="button" type="button" value="Verde" name="green" onclick="cambiarColor('#37e22b')">
+
+    <script>
+        function cambiarfoto() {
+            let select = document.getElementById("select");
+            let image = document.getElementById("imagen");
+
+            let ruta = "./images/";
+
+            image.src = ruta + select.value;
+        }
+
+        function cambiarColor(color){
+            document.bgColor= color;
+        }
+
+    </script>
+</body>
+
+</html>

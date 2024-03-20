@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades extraescolares</title>
+</head>
+<body>
+
+    <h1>Actividades extraescolares</h1>
+
+    <img src="images/barco-pesca-612x612.jpg" id="image" alt="Barco de pesca" onmouseout="volverImagen()" onmouseenter="cambiarimagen()">
+
+    <form action="">
+        <label for="balonmano">balonmano</label>
+        <input type="checkbox" value="25" name="balonmano" id="balonmano" onclick="calcular()">
+        <br>
+
+        <label for="jota">Jota</label>
+        <input type="checkbox" value="30" name="jota" id="jota" onchange="calcular()">
+        <br>
+
+        <label for="guitarra">Guitarra</label>
+        <input type="checkbox" value="20" name="guitarra" id="guitarra" onchange="calcular()">
+        <br>
+
+        <label for="robotica">Robotica</label>
+        <input type="checkbox" value="15" name="robotica" id="robotica" onclick="calcular()">
+        <br>
+
+        <input type="button" value="Calcular" onclick="calcular()">
+    </form>
+
+    <label for="salida">A PAGAR:</label>
+    <input type="text" id="salida">
+
+    <script>
+        function cambiarimagen(){
+            let image= document.getElementById("image");
+
+            //image.setAttribute("src","images/barco-pirata-600x450.jpg");
+            image.src="images/barco-pirata-600x450.jpg";
+        }
+        function volverImagen(){
+            let image= document.getElementById("image");
+
+            //image.setAttribute("src","images/barco-pesca-612x612.jpg");
+            image.src = "images/barco-pesca-612x612.jpg";
+        }
+
+        function calcular(){
+            let balonmano = document.getElementById("balonmano");
+            let jota = document.getElementById("jota");
+            let guitarra = document.getElementById("guitarra");
+            let robotica = document.getElementById("robotica");
+            let salida = document.getElementById("salida");
+
+            let precio;
+
+            if(balonmano.checked){
+                precio += parseInt(balonmano.value) ;
+            }
+
+            if(jota.checked){
+                precio+= parseInt(jota.value);
+            }
+
+            if(guitarra.checked){
+                precio+= parseInt(guitarra.value);
+            }
+
+            if(robotica.checked){
+                precio+= parseInt(robotica.value);
+            }
+
+
+            salida.value = precio;
+
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

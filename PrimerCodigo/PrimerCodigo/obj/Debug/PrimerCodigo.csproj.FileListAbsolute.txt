@@ -1,0 +1,7 @@
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\PrimerCodigo\PrimerCodigo\bin\Debug\PrimerCodigo.exe.config
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\PrimerCodigo\PrimerCodigo\bin\Debug\PrimerCodigo.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\PrimerCodigo\PrimerCodigo\bin\Debug\PrimerCodigo.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\PrimerCodigo\PrimerCodigo\obj\Debug\PrimerCodigo.csproj.AssemblyReference.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\PrimerCodigo\PrimerCodigo\obj\Debug\PrimerCodigo.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\PrimerCodigo\PrimerCodigo\obj\Debug\PrimerCodigo.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\PrimerCodigo\PrimerCodigo\obj\Debug\PrimerCodigo.pdb

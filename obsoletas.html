@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin-left: 0px;
+            margin-right:0px;
+        }
+        div {
+            border: 3px greenyellow dotted;
+        }
+
+        #tigre{
+            color: violet;
+            font-size: xx-large;
+        }
+
+        h2 + ol li{
+            list-style-image: url(images/planeta-tierra.png);
+        }
+
+        h2 + ol li li{
+            list-style-image: url(images/simbolo-de-la-bandera-blanca.png);
+        }
+    </style>
+
+    <script>
+        function cambioColorRed(){
+            document.bgColor="red";
+        }
+
+        function cambioColorGreen(){
+            document.bgColor="green";
+        }
+
+    </script>
+</head>
+
+<body >
+    <div onmouseover="cambioColorGreen()">
+        <h1>Ejemplos de listas</h1>
+        <h2>Listas ordenadas (ol)</h2>
+    </div>
+    
+    <div onmouseover="cambioColorRed()">
+        <ol type="I" start="3">
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+        </ol>
+    </div>
+
+    <h2>Listas un-order (ul)</h2>
+    <ul type="circle">
+        <li id="tigre">Tigre</li>
+        <li>Avestruz</li>
+        <li>Suricato</li>
+        <li>Elefante</li>
+    </ul>
+
+    <h2>Los continentes</h2>
+    <ol type="I">
+        <li>Europa
+            <ol type="a">
+                <li>España</li>
+                <li>Italia</li>
+                <li>Francia</li>
+            </ol>
+        </li>
+        <li>América
+            <ul type="square">
+                <li>Argentina</li>
+                <li>Colombia</li>
+                <li>Chile</li>
+            </ul>
+        </li>
+        <li>África
+            <ol type="i">
+                <li>Marruecos</li>
+                <li>Túnez</li>
+                <li>Egipto</li>
+            </ol>
+        </li>
+        <li>Asia
+            <ol>
+                <li>China</li>
+                <li>Japón</li>
+                <li>India</li>
+            </ol>
+        </li>
+        <li>Oceanía
+            <ol>
+                <li>Australia</li>
+                <li>Kiribati</li>
+                <li>Fiyi</li>
+            </ol>
+        </li>
+    </ol>
+
+    <h2>Lista de definicion (dl)</h2>
+
+    <dl>
+        <dt>dt</dt>
+        <dd>Termino a definir</dd>
+
+        <dt>dd</dt>
+        <dd>Definicion</dd>
+    </dl>
+
+    <a href="enlaces.html">Volver a la página de enlaces</a>
+</body>
+
+</html>

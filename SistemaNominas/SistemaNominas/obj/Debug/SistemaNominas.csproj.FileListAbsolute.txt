@@ -1,0 +1,7 @@
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\SistemaNominas\SistemaNominas\bin\Debug\SistemaNominas.exe.config
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\SistemaNominas\SistemaNominas\bin\Debug\SistemaNominas.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\SistemaNominas\SistemaNominas\bin\Debug\SistemaNominas.pdb
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\SistemaNominas\SistemaNominas\obj\Debug\SistemaNominas.csproj.AssemblyReference.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\SistemaNominas\SistemaNominas\obj\Debug\SistemaNominas.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\SistemaNominas\SistemaNominas\obj\Debug\SistemaNominas.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\SistemaNominas\SistemaNominas\obj\Debug\SistemaNominas.pdb

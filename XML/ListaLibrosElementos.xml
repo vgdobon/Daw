@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<libros>
+    <libro>
+        <titulo titulo="Los Pilares de la Tierra" autor="Ken Follet" anno="2000">
+            Los Pilares de la Tierra
+        </titulo>
+        <autor> Ken Follet</autor>
+        <anno>2000</anno>
+    </libro>
+    <libro>
+        <titulo>Un mundo sin Fin</titulo>
+        <autor>Ken Follet</autor>
+        <anno>2004</anno>
+    </libro>
+</libros>

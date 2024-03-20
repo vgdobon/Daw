@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- <!DOCTYPE catalogo SYSTEM "file.dtd"> -->
+<!-- <?xml-model href="file.dtd" type="application/xml-dtd"?> -->
+<!DOCTYPE catalogo [
+    <!ELEMENT catalogo (producto)*>
+    <!ELEMENT producto (sku,nombre, descripcion,precio,caracteristicas)*>
+        <!ATTLIST producto id ID #REQUIRED>
+    <!ELEMENT sku (#PCDATA)>
+    <!ELEMENT nombre ANY>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT precio (#PCDATA)>
+        <!ATTLIST precio moneda CDATA #REQUIRED simboloMoneda CDATA #FIXED "€">
+    <!ELEMENT caracteristicas EMPTY>
+        <!ATTLIST caracteristicas capacidad NMTOKEN #REQUIRED>
+        <!ATTLIST caracteristicas ram CDATA #REQUIRED>
+]>
+
+<catalogo>
+    <producto id="f001">
+        <sku>GHU47362875</sku>
+        <nombre>ipad 128</nombre>
+        <descripcion>Table gráfica estandar</descripcion>
+        <precio moneda="€" simboloMoneda="€">479</precio>
+        <caracteristicas capacidad="128GB" ram="8GB" />
+    </producto>
+    <producto id="f002">
+        <sku>GHU47362876</sku>
+        <nombre> ipad 256</nombre>
+        <descripcion>Table gráfica estandar</descripcion>
+        <precio moneda="euro">579</precio>
+        <caracteristicas capacidad="128GB" ram="8GB" />
+    </producto>
+</catalogo>

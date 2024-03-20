@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+	<h1>Página de recordatorio</h1>
+	<form action="/" method="post">
+		<label>Saludo:</label><input id="saludo" type="text" /><br />
+		<label>Nombre:</label><input id="nombre" type="text" />
+		<br />
+		<input id="familia" type="checkbox" /><label for="familia">Recuerdos a la familia</label>
+		<input id="quedada" type="checkbox" /><label for="quedada">Quedar un día</label>
+											  <br />
+		<input id="Submit1" type="submit" value="Saludar" />
+	</form>
+	<br />	
+	salida: <span id="salida"></span>
+
+	 <script>
+		document.getElementById("Submit1").addEventListener("click", function(){
+			var saludo = document.getElementById("saludo").value;
+			var nombre = document.getElementById("nombre").value;
+			var familia = document.getElementById("familia").checked;
+			var quedada = document.getElementById("quedada").checked;
+			var salida = document.getElementById("salida");
+			salida.innerHTML = saludo + " " + nombre;
+			if(familia){
+				salida.innerHTML += " y recuerdos a la familia";
+			}
+			if(quedada){
+				salida.innerHTML += " y quedamos un día";
+			}
+		});
+
+</script>
+
+</body>
+</html>

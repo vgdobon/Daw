@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Completo</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=UR1sK1RNLabW0XhQ8-_W9KrQCXUWarQn__nhaxciTKs41MWmGQ1Azk6DWaD9d--TGfxTLQ5WckWXOra5dqb9h6zn2y3YyjJb46IYMLbaxUeKORQvEa2gEG0uwxCBdygqinnTEPw1PksDBk9-9pZI3g" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9ldXJvZm9yLmNhbXB1c3ZpcnR1b3guY29tL0RpZGFjdGljTWF0ZXJpYWwvRG93bmxvYWREaWRhY3RpY01hdGVyaWFsP0lEPTgzOCZNYXRySUQ9NDYz"/><style>
+        table{
+            width: 75%;
+            padding: 15px;
+        }
+        td{
+            width: 50%;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elige lo que vas a comer</h1>
+    <h2>Y que aproveche!!</h2>
+
+    <table border="1">
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>Primeros platos</legend>
+                    <input type="radio" id="rbtEnsalada" name="rbtPrimeros"
+                        value="09/images/platos/ensaladacesar.jpg" />
+                    Ensalada César
+                    <br><br>
+                    <input type="radio" id="rbtMigas" name="rbtPrimeros"
+                        value="10/images/platos/migas.jpg"  />
+                    Migas a la pastora
+                    <br><br>
+                    <input type="radio" id="rbtSopa" name="rbtPrimeros"
+                        value="08/images/platos/sopa.jpg" />
+                    Sopa de cocido
+                </fieldset>
+            </td>
+            <td>
+                <img src="images/platos/primeros.jpg" width="320" id="imgPrimeros" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>Segundos platos</legend>
+                    <input type="radio" id="rbtPollo" name="rbtSegundos" 
+                        value="07/images/platos/pollo.jpg" onclick="calcular()" />
+                    Pollo a la naranja
+                    <br><br>
+                    <input type="radio" id="rbtBacalao" name="rbtSegundos"
+                        value="11/images/platos/bacalao.jpg" onclick="calcular()" />
+                    Bacalao al Orio
+                    <br><br>
+                    <input type="radio" id="rbtCarrilleras" name="rbtSegundos"
+                        value="09/images/platos/carrilleras.jpg" onclick="calcular()" />
+                    Carrilleras de cordero
+                </fieldset>
+            </td>
+            <td>
+                <img src="images/platos/segundos.jpg" width="320" id="imgSegundos" />
+            </td>
+        </tr>
+    </table>
+    <div id="divSalida"></div>
+    <script>
+        function calcular(){
+            let primeros = document.getElementsByName("rbtPrimeros");
+            let segundos = document.getElementsByName("rbtSegundos");
+
+            let valor1="";
+            let valor2="";
+
+            let precio1=0;
+            let foto1="";
+            let precio2=0;
+            let foto2="";
+
+            let salida="";
+
+            for(i=0; i<primeros.length; i++){
+                if(primeros[i].checked){
+                    valor1= primeros[i].value;
+                    break;
+                }
+            }
+
+            for(i=0; i<segundos.length; i++){
+                if(segundos[i].checked){
+                    valor2= segundos[i].value;
+                    break;
+                }
+            }
+
+            precio1 = parseInt(valor1.charAt(0) + valor1.charAt(1));
+            precio2 = parseInt(valor2.charAt(0) + valor2.charAt(1));
+
+            salida ="<h2>A PAGAR: " + (precio1+precio2) + "</h2>";
+            document.getElementById("divSalida").innerHTML=salida;
+
+        }
+    </script>
+</body>
+</html>

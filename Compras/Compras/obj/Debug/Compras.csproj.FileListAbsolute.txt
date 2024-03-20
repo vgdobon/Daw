@@ -1,0 +1,7 @@
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Compras\Compras\bin\Debug\Compras.exe.config
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Compras\Compras\bin\Debug\Compras.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Compras\Compras\bin\Debug\Compras.pdb
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Compras\Compras\obj\Debug\Compras.csproj.AssemblyReference.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Compras\Compras\obj\Debug\Compras.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Compras\Compras\obj\Debug\Compras.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Compras\Compras\obj\Debug\Compras.pdb

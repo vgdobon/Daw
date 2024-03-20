@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos de listas</title>
+    <style>
+        div {
+            border: 3px greenyellow dotted;
+        }
+        a{
+
+            
+        }
+        #paises {
+            list-style-image: url(images/continentes.jpg);
+            margin-left: 50px;
+        }
+
+        ol li ol {
+            list-style-image: url(images/pais.png);
+        }
+    </style>
+</head>
+<body>
+    <a name="volver">Volver</a>
+    <div>
+        <h1>Ejemplos de listas</h1>
+        <nav>
+            <a href="#ordenadas">listas ordenadas</a>
+            <br><br>
+            <a href="#sinordenar">Listas sin ordenar</a>
+            <br><br>
+            <a href="#anidadas">Listas anidadas</a>
+            <br><br>
+            <a href="#definicion">Listas de Definición</a>
+        </nav>
+
+        <a name="ordenadas"></a>
+        <h2>Listas ordenadas</h2>
+        <h3>Los animales</h3>
+
+        <ol type="I" start="3">
+            <li>Tigre</li>
+            <li>Avestruz</li>
+            <li>Camello</li>
+            <li>Suricato</li>
+    </div>
+    </ol>
+    <div>
+        <h2>Listas sin ordenar</h2>
+        <h3>Las plantas</h3>
+        <a href="#volver">volver</a>
+        <a name="sinordenar"></a>
+        <ul type="square">
+            <li>Acelgas</li>
+            <li>Borrajas</li>
+            <li>Espinacas</li>
+            <li>Claveles</li>
+    </div>
+    </ul>
+    <div>
+        <a href="#volver">volver</a>
+        <a name="anidadas"></a>
+        <h2>Listas anidadas</h2>
+        <h3>Los continentes</h3>
+        <ol id="paises">
+            <li>Europa
+                <ol type="a">
+                    <li>España</li>
+                    <li>Italia</li>
+                    <li>Francia</li>
+                </ol>
+            </li>
+            <li>America</li>
+            <a href="#volver"></a>
+            <ol type="square">
+                <li>Argentina</li>
+                <li>Colombia</li>
+                <li>Chile</li>
+            </ol>
+            </li>
+            <li>Africa
+                <ol type="i">
+                    <li>Marruecos</li>
+                    <li>Tunez</li>
+                    <li>Egipto</li>
+                </ol>
+            </li>
+        </ol>
+        <a href="#volver">volver</a>
+        <a name="definicion"></a>
+        <h2>Listas de definicion</h2>
+        <dl>
+            <dt>Ola</dt>
+            <dd>Onda de gran amplitud que se forma en al superficie del agua</dd>
+            <dt>Hola</dt>
+            <dd>Interjeccion que se usa a modo de saludo familiar</dd>
+            <dt>Carambola</dt>
+            <dd>Lance del juego de billar en el que la bola con que se juega, toca las otras dos</dd>
+            <dt>Perola</dt>
+            <dd>Recipiente usado para hacer guisos con abundante agua</dd>
+        </dl>
+    </div>
+</body>
+
+</html>

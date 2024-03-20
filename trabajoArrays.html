@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="else">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trabajo con Arrays</title>
+  </head>
+  <body>
+    <h1>Trabajo con Arrays:</h1>
+    <p><input type="text" id="txtInput" /></p>
+    <p>
+      <input type="button" value="Crear Array" onclick="mostrarArray()" />
+      &nbsp;&nbsp;&nbsp;<input
+        type="button"
+        value="Probar pop()"
+        onclick="probarPop()"
+      />
+      &nbsp;&nbsp;&nbsp;<input
+        type="button"
+        value="Probar push()"
+        onclick="probarPush()"
+      />
+      &nbsp;&nbsp;&nbsp;<input
+      type="button"
+      value="Insertar ciudad"
+      onclick="insertarCiudad()"
+    />
+      <hr>
+      <p>Índice: <input type="number" id="txtIndice" min="0" />
+    <input type="button" value="Mostrar Índice" onclick="mostrarIndice()">
+    </p>
+     
+    </p>
+    <div id="salida"></div>
+
+    <script>
+        //join : separadores
+        // pop: elimina el ultimo elemento
+        // push: añade un elemento al final
+        // shift: elimina el primer elemento
+        // unshift: añade un elemento al principio
+
+      const ciudades = ["Barcelona", "Madrid", "Valencia", "Sevilla"];
+
+      function mostrarArray() {
+        let salida = document.getElementById("salida");
+
+        salida.innerHTML =
+          "Ciudades: " +
+          ciudades +
+          "<br>" +
+          "Total ciudades: " +
+          ciudades.length;
+        //salida.innerHTML = "Ciudades: " + ciudades.join(" / ") + "<br>" + "Total ciudades: " + ciudades.length;
+        //.join("") cambia la forma de separar los arrays
+      }
+
+      function probarPop() {
+        let salida = document.getElementById("salida");
+        const elemento = ciudades.pop();
+        salida.innerHTML = "Acabas de eliminar el elemento: " + elemento;
+        //quitar el ultimo elemento
+      }
+
+      function probarPush() {
+        let texto = document.getElementById("txtInput").value;
+        let salida = document.getElementById("salida");
+        
+        ciudades.push(texto);
+
+        salida.innerHTML = "Acabas de añadir: " + texto;
+        //añadir elemento al array
+      }
+
+      function mostrarIndice(){
+        let salida = document.getElementById("salida");
+        let indice = parseInt(document.getElementById("txtIndice").value);
+        
+        salida.innerHTML = "El elemento " + indice + " es: " + ciudades[indice];
+      }
+
+      function insertarCiudad(){
+        let indice = parseInt(document.getElementById("txtIndice").value);
+        let ciudad = document.getElementById("txtInput").value;
+        ciudades[indice] = ciudad;
+      }
+    </script>
+  </body>
+</html>

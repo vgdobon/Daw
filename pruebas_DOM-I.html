@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body onload="agregar()">
+
+    <div id="salida"></div>
+
+    <ol id="listaCiudades"></ol>
+
+    <input type="text" name="ciudad" id="ciudad">
+    <input type="button" value="Añadir" onclick="addCity()">
+    <input type="button" value="Quitar" onclick="removeCity()">
+
+
+    <script>
+        function agregar(){
+            let parrafo = document.createElement("p");
+            let texto = document.createTextNode("Texto dentro del p");
+            parrafo.appendChild(texto);
+            document.getElementById("salida").appendChild(parrafo);
+        }
+
+        function removeCity(){
+            let ciudadElminar = document.getElementById("ciudad").value;
+            
+            let listaCiudad = document.getElementsByTagName("li");
+            console.log(listaCiudad);
+
+            for (let index = 0; index < listaCiudad.length; index++) {
+                const element = listaCiudad[index];
+
+                if(element.id == ciudadElminar){
+                    element.remove();
+                    index--;
+                }
+                
+            }
+
+            ciudadEliminar.value="";
+        }
+
+        function addCity(){
+            let ciudadNueva = document.getElementById("ciudad");
+
+            let nuevoItemList = document.createElement("li");
+            nuevoItemList.appendChild(document.createTextNode(ciudadNueva.value));
+            nuevoItemList.id = ciudadNueva.value.toLowerCase();
+            let listaCiudad = document.getElementsByTagName("li");
+
+            document.getElementById('listaCiudades').appendChild(nuevoItemList);
+
+            ciudadNueva.value="";
+        }
+
+    </script>
+    
+</body>
+</html>

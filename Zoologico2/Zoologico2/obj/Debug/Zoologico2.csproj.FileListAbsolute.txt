@@ -1,0 +1,7 @@
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Zoologico2\Zoologico2\bin\Debug\Zoologico2.exe.config
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Zoologico2\Zoologico2\bin\Debug\Zoologico2.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Zoologico2\Zoologico2\bin\Debug\Zoologico2.pdb
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Zoologico2\Zoologico2\obj\Debug\Zoologico2.csproj.AssemblyReference.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Zoologico2\Zoologico2\obj\Debug\Zoologico2.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Zoologico2\Zoologico2\obj\Debug\Zoologico2.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Zoologico2\Zoologico2\obj\Debug\Zoologico2.pdb

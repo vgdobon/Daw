@@ -1,0 +1,10 @@
+<!ELEMENT catalogo (producto)*>
+<!ELEMENT producto (nombre, descripcion,precio,caracteristicas)*>
+<!ELEMENT nombre ANY>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda CDATA #REQUIRED>
+<!ATTLIST precio simboloMoneda CDATA >
+<!ELEMENT caracteristicas EMPTY>
+<!ATTLIST caracteristicas capacidad CDATA #REQUIRED>
+<!ATTLIST caracteristicas ram CDATA #REQUIRED>

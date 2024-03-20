@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fechas</title>
+</head>
+
+<body>
+
+    <h1>Trabajo con fechas</h1>
+    <input type="button" value="hoy" onclick="verHoy()">
+    <input type="button" value="Construir fechas" onclick="construirFecha()">
+    Elige una fecha <input type="date" name="fecha" id="fecha" onchange="mostarFecha()">
+    <input type="button" value="Sumar días" onclick="sumarDias()">
+    <input type="button" value="Pasar a texto" onclick="convertirFecha()">
+    <input type="button" value="Tiempo de vida" onclick="tiempoVivido()">
+    <div id="divSalida"></div>
+
+
+    <p id="salida"></p>
+    <script>
+
+        function tiempoVivido(){
+            let divSalida= document.getElementById("divSalida");
+            let fechaNacimiento = new Date(document.getElementById("fecha").value);
+            alert(fechaNacimiento);
+            let salida="";
+            let dias;
+            let horas=0;
+            let minutos=0;
+            let segundos=0;
+
+            fechaNacimiento.setHours(0);
+            let fechaHoy= new Date().getTime();
+            
+            let diferenciaMs = fechaHoy - fechaNacimiento.getTime();
+
+            let sgDia = 60*60*24;
+            let sgHora= 60*60;
+            let sgMinutos=60;
+
+
+            let segundosDiferencia = parseInt(diferenciaMs/1000);
+
+            dias = segundosDiferencia/sgDia;
+            segundosDiferencia = (dias-parseInt(dias))*sgDia;
+            dias= parseInt(dias);
+
+            horas = segundosDiferencia/sgHora;
+            segundosDiferencia = (horas-parseInt(horas))*sgHora;
+            horas= parseInt(horas);
+
+            alert(horas);
+
+            minutos = segundosDiferencia/sgMinutos;
+            segundosDiferencia = (minutos-parseInt(minutos))*sgMinutos;
+            minutos = parseInt(minutos);
+
+            divSalida.innerHTML= "Dias:"+ dias + "\nHoras:" + horas + "\nMinutos: " + minutos+ "Segundos:" + parseInt(segundosDiferencia);
+        }
+        function convertirFecha() {
+            let fecha = new Date(document.getElementById("fecha").value);
+            let diaSemana = fecha.getDay();
+            let diaSemanaTexto = "";
+            let mes = fecha.getMonth();
+            let mesTexto = "";
+
+            switch (mes) {
+                case 0:
+                    mesTexto = "Enero";
+                    break;
+                case 1:
+                    mesTexto = "Febrero";
+                    break;
+                case 2:
+                mesTexto = "Marzo";
+                    break;
+                case 3:
+                mesTexto = "Abril";
+                    break;
+                case 4:
+                mesTexto = "Mayo";
+                    break;
+                case 5:
+                mesTexto = "Junio";
+                    break;
+                case 6:
+                mesTexto = "Julio";
+                    break;
+                case 7:
+                mesTexto = "Agosto";
+                    break;
+                case 8:
+                mesTexto = "Septiembre";
+                    break;
+                case 9:
+                mesTexto = "Octubre";
+                    break;
+                case 10:
+                mesTexto = "Noviembre";
+                    break;
+                case 11:
+                mesTexto = "Diciembre";
+                    break;
+            }
+
+            switch (diaSemana) {
+                case 0:
+                    diaSemanaTexto = "Domingo";
+                    break;
+                case 1:
+                    diaSemanaTexto = "Lunes";
+                    break;
+                case 2:
+                    diaSemanaTexto = "Martes";
+                    break;
+                case 3:
+                    diaSemanaTexto = "Miércoles";
+                    break;
+                case 4:
+                    diaSemanaTexto = "Jueves";
+                    break;
+                case 5:
+                    diaSemanaTexto = "Viernes";
+                    break;
+                case 6:
+                    diaSemanaTexto = "Sábado";
+                    break;
+            }
+
+            let salida = "Hoy es " + diaSemanaTexto + " de " +
+            mesTexto + " de " + fecha.getFullYear()
+
+            document.getElementById("divSalida").innerHTML = salida;
+
+        }
+
+        function sumarDias() {
+            let fecha = new Date(document.getElementById("fecha").value);
+            fecha.getUTCFullYear
+
+            let dias = parseInt(prompt("Días a añadir", 0));
+            let msDias = dias * 24 * 60 * 60 * 1000;
+
+            document.getElementById("divSalida").innerHTML = new Date(fecha.getTime() + msDias);
+
+
+        }
+
+
+        function mostarFecha() {
+           // alert(document.getElementById('fecha').value);
+        }
+
+        function construirFecha() {
+            let anyo = parseInt(prompt("Año:"));
+            let mes = parseInt(prompt("Mes:"));
+            let dia = parseInt(prompt("Día:"));
+            let hora = parseInt(prompt("Hora:"));
+            let minuto = parseInt(prompt("Minuto:"));
+            let segundo = parseInt(prompt("Segundo:"));
+
+            let date = new Date(anyo, mes - 1, dia, hora, minuto, segundo);
+
+            document.getElementById('salida').innerHTML = date;
+
+        }
+
+        function verHoy() {
+            let hoy = new Date();
+
+            document.getElementById('salida').innerHTML = hoy;
+        }
+    </script>
+</body>
+
+</html>

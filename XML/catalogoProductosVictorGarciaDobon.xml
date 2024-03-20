@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE catalogos SYSTEM "DTDcatalogos.dtd"> -->
+<!DOCTYPE catalogos [
+    <!ELEMENT catalogos (catalogo*)>
+    <!ELEMENT catalogo (producto*)>
+        <!ATTLIST catalogo lang (es | en | fr) "es">
+    <!ELEMENT producto (nombre, descripcion, precio, caracteristica* , disponible*)>
+        <!ATTLIST producto idProducto ID #REQUIRED>
+        <!ATTLIST producto sku NMTOKEN #REQUIRED>
+    <!ELEMENT nombre (#PCDATA)>
+        <!ENTITY marca "Apple">
+    <!ELEMENT descripcion ANY>
+    <!ELEMENT precio (#PCDATA)>
+    <!ATTLIST precio moneda CDATA #REQUIRED
+                     simbMoneda CDATA #REQUIRED>
+    <!ELEMENT caracteristica (#PCDATA)>
+        <!ATTLIST caracteristica destacada CDATA #IMPLIED>
+    <!ELEMENT disponible EMPTY>
+]>
+<catalogos>
+    <catalogo lang="es">
+        <producto idProducto="i-01" sku="GHU7657789">
+            <nombre>&marca; ipad 128</nombre>
+            <descripcion>Tableta gráfica estandar</descripcion>
+            <precio moneda="euro" simbMoneda="€">479</precio>
+            <caracteristica destacada="true">Capacidad: 128GB</caracteristica>
+            <caracteristica>Ram: 8GB</caracteristica>
+            <disponible/>
+        </producto>
+        <!-- ahora segunda opción con elementos -->
+        <producto idProducto="i-02" sku="GHU7657790">
+            <nombre>&marca; ipad 256</nombre>
+            <descripcion>Tableta gráfica estandar</descripcion>
+            <precio moneda="euro" simbMoneda="€">579</precio>
+            <caracteristica>Capacidad: 256GB</caracteristica>
+            <caracteristica>Ram: 8GB</caracteristica>
+        </producto>
+    </catalogo>
+</catalogos>

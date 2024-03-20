@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alquiler de coches</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Alquiler de coches</h1>
+    <fieldset>
+        <legend>Recogida de datos</legend>
+        Tipo de coche:
+        <select id="tipoCoche">
+            <option value="0">Furgoneta</option>
+            <option value="1">Turismo</option>
+            <option value="2">Monovolumen</option>
+            <option value="3">Todoterreno</option>
+        </select>
+        <br /><br />
+        <table border="0" width="75%" class="table">
+            <tr>
+                <td>
+                    Km. Iniciales:
+                    <input type="text" id="txtKmInicio" size="5" />
+                </td>
+                <td>
+                    Km. Finales:
+                    <input type="text" id="txtKmFinal" size="5" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Fecha Inicial:
+                    <input type="date" id="txtFechaInicio">
+                    <br><br>
+                    Fecha Final:
+                    <input type="date" id="txtFechaFinal">
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>Tipo de seguro</legend>
+                        <input type="radio" value="A" id="rbtSeguroA" name="rbtSeguro" />
+                        Seguro Estándar
+                        <br />
+                        <input type="radio" value="B" id="rbtSeguroB" name="rbtSeguro" />
+                        Seguro Especial
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="chkTarjeta" />Tarjeta Rent-a-Car
+                </td>
+                <td>
+                    <input type="button" value="Calcular" onclick="calcular()" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <br><br>
+    <h1>Zona de salida</h1>
+    <div id="divSalida" style="display: none;">
+        <div class="row">
+            <div class="col-6">
+                <table width="500px" class="table table-striped">
+                    <tr>
+                        <th>Importe Base</th>
+                        <td id="iBase"></td>
+                    </tr>
+                    <tr>
+                        <th>Nº de kilometros</th>
+                        <td id="nKm"></td>
+                    </tr>
+                    <tr></tr>
+                    <th>Precio Kilómetros</th>
+                    <td id="precioKm"></td>
+                    </tr>
+                    <tr>
+                        <th>Total Km</th>
+                        <td id="totalKm"></td>
+                    </tr>
+                    <tr>
+                        <th>Días</th>
+                        <td id="dias"></td>
+                    </tr>
+                    <tr>
+                        <th>Precio Seguro</th>
+                        <td id="precioSeguro"></td>
+                    </tr>
+                    <tr>
+                        <th>Total Seguro</th>
+                        <td id="totalSeguro"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-6">
+                <table width="500px" class="table table-striped">
+                    <tr>
+                        <th>Subtotal</th>
+                        <td id="subTotal"></td>
+                    </tr>
+                    <tr>
+                        <th><span id="pcDescuento"></span> Descuento</th>
+                        <td id="descuento"></td>
+                    </tr>
+                    <tr>
+                        <th>Base Imponible</th>
+                        <td id="baseImponible"></td>
+                    </tr>
+                    <tr>
+                        <th>IVA 21%</th>
+                        <td id="iva"></td>
+                    </tr>
+                    <tr>
+                        <th>A PAGAR</th>
+                        <td id="total"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function calcular() {
+            //let tiposCoche = [];
+            let preciosBase = [25, 30, 35, 40];
+            let preciosKm = [0.02, 0.03, 0.05, 0.08];
+            let preciosSeguroA = [6, 9, 12, 15];
+            let preciosSeguroB = [10, 15, 20, 25];
+
+            let salida = "";
+
+            let tipoCoche = parseInt(document.getElementById("tipoCoche").value);
+            let precioBase = preciosBase[tipoCoche];
+
+            //Cálculo de los kilómetros
+            let precioKm = preciosKm[tipoCoche];
+            let numeroKm = document.getElementById("txtKmFinal").value -
+                document.getElementById("txtKmInicio").value
+            let totalKm = precioKm * numeroKm;
+
+
+            //Cálculo del seguro
+            let inicio = new Date(document.getElementById("txtFechaInicio").value);
+            let final = new Date(document.getElementById("txtFechaFinal").value);
+            let msInicio = inicio.getTime();
+            let msFinal = final.getTime();
+            let dias = parseInt((msFinal - msInicio) / 1000 / 60 / 60 / 24) + 1;
+
+            let seguros = document.getElementsByName("rbtSeguro");
+            let tipoSeguro = "";
+            let precioSeguro = 0;
+            let subtotal = 0;
+
+            for (i = 0; i < seguros.length; i++) {
+                if (seguros[i].checked) {
+                    tipoSeguro = seguros[i].value;
+                    break;
+                }
+            }
+
+            if (tipoSeguro == "A")
+                precioSeguro = preciosSeguroA[tipoCoche];
+            else
+                precioSeguro = preciosSeguroB[tipoCoche];
+
+            let totalSeguro = dias * precioSeguro;
+
+            //Cálculos finales
+            subtotal = precioBase + totalKm + totalSeguro;
+            let descuento = 0;
+
+            if (document.getElementById("chkTarjeta").checked)
+                descuento = 0.2;
+            else
+                descuento = 0;
+
+            let importeDescuento = subtotal * descuento;
+            let baseImponible = subtotal - importeDescuento;
+            let iva = baseImponible * 0.21;
+            let aPagar = baseImponible + iva;
+
+            //Confeccionar la salida
+            let divSalida = document.getElementById("divSalida");
+            document.getElementById("iBase").innerHTML = precioBase;
+            document.getElementById("nKm").innerHTML = numeroKm;
+            document.getElementById("precioKm").innerHTML = precioKm;
+            document.getElementById("totalKm").innerHTML = totalKm;
+            document.getElementById("dias").innerHTML = dias;
+            document.getElementById("precioSeguro").innerHTML = precioSeguro;
+            document.getElementById("totalSeguro").innerHTML = totalSeguro;
+            document.getElementById("subTotal").innerHTML = totalSeguro;
+            document.getElementById("descuento").innerHTML = importeDescuento.toFixed(2);
+            document.getElementById("pcDescuento").innerHTML = (descuento * 100) + "%";
+            document.getElementById("baseImponible").innerHTML = baseImponible;
+            document.getElementById("iva").innerHTML = iva;
+            document.getElementById("total").innerHTML = aPagar;
+            divSalida.style.display = "block";
+
+        }
+    </script>
+</body>
+
+</html>

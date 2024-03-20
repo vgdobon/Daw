@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraseña</title>
+</head>
+
+<body>
+
+    <input type="text" name="pass" id="pass">
+    <input type="button" value="Inicio" onclick="validarPass()">
+    <div id="salida"></div>
+
+    <script>
+        let intentos = 0;
+        function validarPass() {
+
+            let pass = '1234';
+            let tryPass = document.getElementById("pass");
+            let salida = document.getElementById("salida");
+
+            while (intentos < 3) {
+                intentos++;
+                if (tryPass.value === pass) {
+                    salida.innerHTML = "Contraseña correcta";
+                    break;
+                } else {
+
+                    salida.innerHTML = "Contraseña incorrecta. Número de intentos " + intentos + "/3";
+                    if (intentos == 3) {
+                        tryPass.disabled = true;
+                    }
+                    break;
+                }
+            }
+        }
+
+        function validarPassIf() {
+
+            let pass = '1234';
+            let tryPass = document.getElementById("pass");
+            let salida = document.getElementById("salida");
+            intentos++
+
+
+            if (tryPass.value === pass) {
+                salida.innerHTML = "Contraseña correcta";
+                return;
+            } else {
+                if(intentos < 2) {
+                    salida.innerHTML = "Contraseña incorrecta. Número de intentos " + intentos + "/3";
+                }else{
+                    salida.innerHTML += "\nTe has pasado. Cuenta bloqueada";
+                    tryPass.disabled = true;
+                }
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        Frase : <input type="text" name="txtFrase" id="txtFrase" size="50">
+    </div>
+    <br><br>
+    <div>
+        <input type="button" value="Longitud" onclick="verLongitud()">
+    </div>
+    <br>
+
+    <label for="frase">Frase:</label>
+    <input type="text" id="frase">
+    <label for="numero">Número de carácteres:</label>
+    <input type="text" name="numero" id="numero">
+    <input type="button" value="Cortar" onclick="cortar()">
+    <input type="button" value="Cambiar texto" onclick="formatear()">
+    <input type="button" value="Contar vocales y consonantes" onclick="contar()">
+    <input type="button" value="Poner del revés" onclick="cambiarSentido()">
+    <br>
+    <div id="salida"></div>
+
+    <script>
+        let salida = document.getElementById("salida");
+        let frase = document.getElementById("frase");
+        let fraseFormatear = "";
+
+        function cambiarSentido(){
+            fraseFormatear = frase.value;
+            let fraseNueva="";
+
+            for(i=fraseFormatear.length-1; i>=0;i--){
+                fraseNueva+= fraseFormatear.charAt(i);
+            }
+
+            salida.innerHTML = fraseNueva;
+
+        }
+
+        function contar(){
+            fraseFormatear = frase.value.toLowerCase();
+            let vocales = ["a","e","i","","o","u","á","é","í","ó","ú"];
+            alert(fraseFormatear.length);
+            let nVocales=0;
+            let nConsonantes=0;
+            let vocal;
+
+            for(i=0; i < fraseFormatear.length;i++){
+                vocal=false;
+                for(j=0; j < vocales.length;j++){
+                    console.log(vocales[j] + "->>" + fraseFormatear.charAt(i));
+                    if(fraseFormatear.charAt(i)==vocales[j]){
+                        console.log(vocales[j] + "->>" + fraseFormatear.charAt(i));
+                        nVocales++;
+                        vocal= true;
+                        break;
+                    }
+                }
+                if(!vocal){
+                    nConsonantes++;
+                }
+            }
+
+            salida.innerHTML = "La frase:'" + fraseFormatear + " tiene " + nVocales + " y " + nConsonantes + " consonantes.";
+        }
+
+        function cortar(){
+            fraseFormatear = frase.value;
+            let caracteres = parseInt(document.getElementById("numero").value);
+
+            salida.innerHTML = frase.value + " sus primeras " + caracteres + 
+            " carácteres son: " + fraseFormatear.slice(0,caracteres);
+        }
+
+
+        function formatear(){
+            
+            fraseFormatear = frase.value;
+            salida.innerHTML = "'"+frase.value+"'" + " en mayúsculas: " + fraseFormatear.toUpperCase() + "\n"+
+            frase.value + " en minúsculas: " + fraseFormatear.toLowerCase() + "\n";
+
+        }
+
+        function verLongitud(){
+            let frase = document.getElementById("txtFrase").value;
+            let salida = "";
+            salida.startsWith();
+
+            salida = salida + ":\n" + "Longitud\t" + frase.lenght + 
+                     "\nTermina en H:" + frase.endsWith('H') +
+                     "\nComienza en H:" + frase.startsWith ('H'); 
+
+
+            let cadena= "Nombre\t\t Apellido \n" + "Ernesto\t\tCasas \n" + 
+                        "Isabel";
+
+            let dni="23345345T";
+            //alert(dni.repeat(2));
+            //alert(dni.slice(0,2));
+            //alert(dni.match(/^[a-z]{3}[0-9]{6}[a-z]?$/g));
+
+
+
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>

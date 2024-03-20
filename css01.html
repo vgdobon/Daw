@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de CSS</title>
+    
+    <style>
+        /* CSS para toda la página */
+        p{
+            color: blueviolet;
+        }
+
+        .fondo-naranja{
+            background-color: lightsalmon;
+            color: aqua;
+        }
+
+        .fondo-darkolive{
+            background-color: darkolivegreen;
+        }
+
+        .texto-blanco{
+            color:aliceblue;
+        }
+
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body style="background-color: chartreuse;">
+    <header>
+        Encabezado
+    </header>
+
+    <section id="seccion1" class="fondo-darkolive texto-blanco">
+        <h1>Tipos de css</h1>
+        <h2>Repaso intensivo de css</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Neque maiores pariatur quibusdam magnam.
+            Obcaecati incidunt id recusandae sequi magni veniam,
+            est necessitatibus maxime aspernatur quod, iusto nihil? Quasi, vitae quis.</p>
+    </section>
+
+    <section id="seccion2">
+        
+        <h2> Párrafos con clases</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aspernatur facere vel dolor eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed itaque beatae, officia explicabo cumque ex nam.</p>
+        
+        <p class="fondo-naranja texto-blanco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aspernatur facere vel dolor eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed itaque beatae, officia explicabo cumque ex nam.</p>
+        
+        <p class="fondo-darkolive texto-blanco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aspernatur facere vel dolor eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed itaque beatae, officia explicabo cumque ex nam.</p>
+    </section>
+    <section id="seccion3">
+        <!-- style CSS in line -->
+        <h2 style="color: blueviolet;text-decoration: underline;">Usando CSS local</h2>
+        
+        <p style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aspernatur facere vel dolor eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed itaque beatae, officia explicabo cumque ex nam.</p>
+    </section>
+    
+    <style>
+        /* Style en el body ocasionalmente para ÑAPAS */
+        body{
+            background-color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="css/styles.css">
+</body>
+</html>

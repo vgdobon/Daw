@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            background-image: url('images/acelga.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body id="cuerpo">
+
+    <h1>Calculadora</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laboriosam temporibus omnis, numquam
+        perspiciatis molestiae ipsam alias reiciendis hic aperiam ratione eius ab veniam. Nemo facilis voluptas magnam
+        libero consequatur.</p>
+
+    <label for="num1">Dime un numero</label>
+    <input type="text" id="num1">
+    <label for="num2">Dime otro numero</label>
+    <input type="text" id="num2">
+
+    <input type="button" value="+" name="suma" onclick="calcular('+')">
+    <input type="button" value="-" name="resta" onclick="calcular('-')">
+    <input type="button" value="*" name="producto" onclick="calcular('*')">
+    <input type="button" value="/" name="division" onclick="calcular('/')">
+
+    <div id="salida"></div>
+
+    <br><br>
+
+
+    <input class="button" type="button" value="Hielo" name="hielo" onclick="cambiarColor('white','aqua')">
+    <input class="button" type="button" value="Infierno" name="infierno" onclick="cambiarColor('red','black')">
+    <input class="button" type="button" value="Desierto" name="desierto" onclick="cambiarColor('brown','#b6ab2f75')">
+
+    <input class="button" type="button" value="Velero" name="velero" onclick="cambiarFondo('velero_fondo.jpg')">
+    <input class="button" type="button" value="Tigre" name="tigre" onclick="cambiarFondo('tigre_fondo.jpg')">
+    <input class="button" type="button" value="Acelga" name="acelga" onclick="cambiarFondo('acelga.jpg')">
+
+    <br><br>
+
+    <input type="text" id="numero1">
+    <select name="operaciones" id="operador">
+        <option value="sumar">Sumar</option>
+        <option value="restar">Restar</option>
+        <option value="multiplicar">Multiplicar</option>
+        <option value="division">Dividir</option>
+    </select>
+    <input type="text" id="numero2">
+    <input type="button" value="=" onclick="calcularSelect()">
+    <input type="text" id="salidaIn">
+
+    <br>
+    <br>
+
+    <select name="provincia" id="provincia" onclick="seleccionarProvincia()">
+        <option value="zgz">Zaragoza</option>
+        <option value="hsc">Huesca</option>
+        <option value="trl">Teruel</option>
+    </select>
+
+    <select name="localidad" id="localidad" onclick="seleccionarLocalidad()">
+        <option value="primero" id="primero">Calatayud</option>
+        <option value="segundo" id="segundo">Ejea de los Caballeros</option>
+        <option value="tercero" id="tercero">Tarazona</option>
+    </select>
+
+    <div id="imgDivPueblo">
+        <img src="images/Zaragoza.webp" width="400px" alt="" id="imagenPueblo">
+    </div>
+
+    <input type="button" id="button" value="Boton">
+    <img src="images/yate_650_1200.jpg" alt="" onmouseover="agregaFuncion()">
+    <script>
+
+        let provincia="zgz";
+        let image =document.getElementById("imagenPueblo");
+
+        function agregaFuncion() {
+            let button = document.getElementById("button");
+
+            button.addEventListener("click", () => {
+                alert("Estoy agregando un evento");
+            });
+
+            button.style.backgroundColor = "green";
+            button.style.color = "white";
+
+        }
+
+        // function setProvincia(provincia) {
+        //     provincia = provincia;
+        // }
+
+        function seleccionarLocalidad() {
+            let localidad = document.getElementById("localidad");
+
+            switch (provincia) {
+                case 'zgz':
+                    if (localidad.value == "primero") {
+                        image.src = "images/calatayud.jpg";
+                    } else if (localidad.value == "segundo") {
+                        image.src = "images/EJEA.jpg";
+                    } else {
+                        image.src = "images/tarazona.avif";
+                    }
+                    provincia="";
+                    break;
+
+                case 'hsc':
+                    if (localidad.value == "primero") {
+                        image.src = "images/Jaca.jpg";
+                    } else if (localidad.value == "segundo") {
+                        image.src = "images/monzon.jpg";
+                    } else {
+                        image.src = "images/binefar.jpg";
+                    }
+                    break;
+                case 'trl':
+                    if (localidad.value == "primero") {
+                        image.src = "images/Orrios.jpg";
+                    } else if (localidad.value == "segundo") {
+                        image.src = "images/libros.jpeg";
+                    } else {
+                        image.src = "images/moraderubielos.jpg";
+                    }
+                    break;
+            }
+
+
+
+        }
+
+        function seleccionarProvincia() {
+            let provinciaSelect = document.getElementById("provincia");
+            let primero = document.getElementById("primero");
+            let segundo = document.getElementById("segundo");
+            let tercero = document.getElementById("tercero");
+
+            if (provinciaSelect.value == "zgz") {
+                primero.innerText = "Calatayud";
+                segundo.innerText = "Ejea de los Caballeros";
+                tercero.innerText = "Tarazona";
+                image.src = "images/Zaragoza.webp";
+                provincia="zgz";
+
+            } else if (provinciaSelect.value == "hsc") {
+                primero.innerText = "Jaca";
+                segundo.innerText = "Monzon";
+                tercero.innerText = "Binefar";
+                image.src  = "images/huesca.jpeg";
+                provincia="hsc";
+            } else {
+                primero.innerText = "Orrios";
+                segundo.innerText = "Libros";
+                tercero.innerText = "Mora de Rubielos";
+                image.src  = "images/teruel.jpg";
+                provincia="trl";
+            }
+        }
+
+
+        function cambiarFondo(imagen) {
+            let body = document.getElementById('cuerpo');
+
+            let ruta = 'images/';
+
+            body.style.backgroundImage = "url(" + ruta + imagen + ")";
+        }
+
+        function cambiarColor(colorLetra, colorFondo) {
+            document.bgColor = colorFondo;
+            document.fgColor = colorLetra;
+        }
+
+        function calcularSelect() {
+            let num1 = parseInt(document.getElementById("numero1").value);
+            let num2 = parseInt(document.getElementById("numero2").value);
+            let select = document.getElementById("operador").value;
+            let salida = document.getElementById("salidaIn");
+
+            let resultado = 0;
+
+            if (select == "sumar") {
+                resultado = num1 + num2;
+
+            } else if (select == "restar") {
+                resultado = num1 - num2;
+
+            } else if (select == "multiplicar") {
+                resultado = num1 * num2;
+
+            } else {
+                resultado = num1 / num2;
+            }
+
+            salida.value = resultado;
+
+        }
+
+        function calcular(operador) {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let salidaDiv = document.getElementById("salida");
+
+            console.log(num1, num2);
+            let resultado = 0;
+            let salida = "";
+
+            if (operador == '+') {
+                resultado = num1 + num2;
+                salida = num1 + "+" + num2 + "=" + resultado;
+
+            } else if (operador == '-') {
+                resultado = num1 - num2;
+                salida = num1 + "-" + num2 + "=" + resultado;
+
+            } else if (operador == '*') {
+                resultado = num1 * num2;
+                salida = num1 + "*" + num2 + "=" + resultado;
+
+            } else {
+                resultado = num1 / num2;
+                salida = num1 + "/" + num2 + "=" + resultado;
+            }
+
+            console.log(salida);
+            salidaDiv.innerText = salida;
+
+        }
+    </script>
+</body>
+
+</html>

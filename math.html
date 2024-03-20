@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+</head>
+<body onload="mostrarSalida()">
+
+    <h1>El objeto Math</h1>
+
+    <div id="divSalida">
+
+    </div>
+    
+    <script>
+        function mostrarSalida(){
+            let salida =    Math.E +  "->> returns Eulers number" +"<br>" +
+                            Math.PI +  "->> returns PI" +"<br>" +
+                            Math.SQRT2 +  "->>returns the square root of 2" +"<br>" +
+                            Math.SQRT1_2 +  "->> returns the square root of 1/2" +"<br>" +
+                            Math.LN2 +  "->> returns the natural logarithm of 2" +"<br>" +
+                            Math.LN10 +  "->> returns the natural logarithm of 10" +"<br>" +
+                            Math.LOG2E +  "->> returns base 2 logarithm of E" +"<br>" +
+                            Math.LOG10E +  "->> returns base 10 logarithm of E ";
+        
+                        document.getElementById("divSalida").innerHTML = salida;
+                        }
+    </script>
+</body>
+</html>

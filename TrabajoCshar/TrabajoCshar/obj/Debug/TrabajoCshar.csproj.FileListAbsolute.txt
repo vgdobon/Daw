@@ -1,0 +1,12 @@
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.csproj.AssemblyReference.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.Form1.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.Properties.Resources.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.csproj.GenerateResource.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\bin\Debug\TrabajoCshar.exe.config
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\bin\Debug\TrabajoCshar.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\bin\Debug\TrabajoCshar.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.frmPresentarCadenas.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\TrabajoCshar\TrabajoCshar\obj\Debug\TrabajoCshar.tablaDeMultiplicar.resources

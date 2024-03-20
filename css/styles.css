@@ -1,0 +1,95 @@
+*{
+    /* modelo de sumar el tamaño de las cajas con padding y border dentro
+        de width y height */
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: rgba(170, 255, 157, 0.92);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header{
+    background-color: #333333;
+}
+
+#menuPrincipal li{
+    display: inline-block;
+    padding: 15px;
+    margin-right: 10px;
+}
+
+#menuPrincipal li:hover{
+    background-color: rgb(91, 91, 91);
+}
+
+#menuPrincipal li a:link,#menuPrincipal li a:visited{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+#menuPrincipal li a:hover,#menuPrincipal li a:visited{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+/* para usar varios selectores, enumerar con " , " */
+#seccion1, #seccion2, #seccion3{
+    /* altura */
+    height: 250px;
+    /* si el contenido crece el contenedor crece */
+    min-height: 250px;
+    margin: 40px;
+}
+
+h1{
+    font-size: 32px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+.fondo-naranja{
+    background-color: lightsalmon;
+    color: aqua;
+}
+
+.fondo-darkolive{
+    background-color: darkolivegreen;
+}
+
+.texto-blanco{
+    color:aliceblue;
+}
+
+
+#seccion1 a:link, #seccion a:visited{
+    color:wheat;
+    font-size: large;
+    font-weight: bold;
+}
+
+#seccion1 a:hover, #seccion1 a:active{
+    color:darkturquoise;
+    font-size: 60px;
+}
+
+#seccion2 p{
+    padding: 50px;
+}
+
+#seccion2 p+span{
+    background-color: yellow;
+    /* mostrar */
+    display: none;
+}
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <p id="suma">Suma: </p>
+    <p id="resta">Resta: </p>
+    <p id="producto">Producto:</p>
+    <p id="division">División:</p>
+
+    <script>
+        let num1 = prompt("Dime un numero");
+        let num2 = prompt("Dime otro número");
+
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+
+        let sumaElemento = document.getElementById("suma");
+        let restaElemento = document.getElementById("resta");
+        let productoElemento = document.getElementById("producto");
+        let divisionElemento = document.getElementById("division");
+
+        let suma = num1 + num2;
+        let resta = num1 - num2;
+        let producto = num1 * num2;
+        let division =  (num1 / num2).toFixed(4);
+
+        sumaElemento.innerText = "Suma: " + num1 + " + " + num2 +
+         " = " + suma;
+        restaElemento.appendChild(document.createTextNode(num1 + " - " +
+         num2 + " = " + resta));
+        productoElemento.innerText = "Producto: " + num1 + " * " +
+         num2 + " = " + producto;
+        divisionElemento.innerText = "División: " + num1 + " / " +
+         num2 + " = " + division;
+
+
+    </script>
+
+</body>
+
+</html>

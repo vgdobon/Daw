@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+</head>
+<body>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Hacerla potencia de un número</legend>
+            <input type="number" name="txtNumber" id="txtNumber">
+            <input type="button" id="cmdMostrar" value="Mostrar resultado" onclick="mostrar()">
+        </fieldset>
+    </form>
+
+    <div>
+        <input type="button" value="Incrementos" onclick="incrementar()">
+    </div>
+
+    <div>
+        <input type="button" value="Comprar" onclick="comprar()">
+    </div>
+    
+
+    <div id="salida"></div>
+
+    <form action="">
+        <fieldset>
+            <legend>Diferencia ventas</legend>
+
+            <label for="ventas2022">Ventas 2022</label>
+            <input type="text" id="ventas2022" name="ventas2022">
+            <br>
+
+            <label for="ventas2023">Ventas 2023</label>
+            <input type="text" id="ventas2023" name="ventas2023">
+            <br>
+        </fieldset>
+
+        <input type="button" value="Comprobar ventas" onclick="ventas()">
+    </form>
+
+    <label for="absoluto">Absoluto:</label>
+    <input type="text" id="absoluto">
+    <br>
+
+    <label for="porcentaje">porcentaje</label>
+    <input type="text" id="porcentaje">
+    <br>
+
+    <p>
+        <input type="checkbox" id="chCoche" value="75" checked> Tienes coche
+        <br>
+        <input type="button" value="Ver estado" onclick="verEstado()">
+
+    </p>
+
+    <div id="salidaEstado"></div>
+
+    <script>
+
+        function verEstado(){
+            let casilla = document.getElementById("chCoche");
+            alert(typeof(casilla.value));
+            if(casilla.checked){
+                document.getElementById("salidaEstado").innerText = "Viajecito en coche!!";
+            }else{
+                document.getElementById("salidaEstado").innerText = "Te quedas en casa!!";
+            }
+               }
+
+        function ventas(){
+            let ventas2022 = document.getElementById("ventas2022").value;
+            let ventas2023 = document.getElementById("ventas2023").value;
+            let absoluto_out = document.getElementById("absoluto");
+            let porcentaje_out = document.getElementById("porcentaje");
+
+            absoluto_out.value = ventas2023 - ventas2022;
+
+            porcentaje_out.value = (((ventas2023-ventas2022) /ventas2022)*100).toFixed(3) + "%";
+        }
+
+        function mostrar(){
+            let numeroEntrada = document.getElementById("txtNumber").value;
+            alert(numeroEntrada);
+            let cuadrado = numeroEntrada ** 2;
+            let cubo = numeroEntrada ** 3;
+            let cuarta = numeroEntrada ** 4;
+            
+
+            let salida = "Número: " + numeroEntrada + "<br>" + 
+                        "Cuadrado: " + cuadrado + "<br>" +
+                        "Cubo: " + cubo + "<br>" +
+                        "Cuarta: " + cuarta + "<br>" ;
+
+            alert(salida);
+
+            document.getElementById("salida").innerHTML = salida;
+        }
+
+        function incrementar(){
+
+            let input = document.getElementById("txtNumber");
+            input.value = ++input.value;
+        }
+
+        function comprar(){
+            let a = true;
+            let b = "nhc";
+            alert(a == b);
+        }
+
+    </script>
+</body>
+</html>

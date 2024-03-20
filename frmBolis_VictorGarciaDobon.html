@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos de bolígrafos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231020/pngtree-classic-writing-tool-ink-pen-enhances-parchment-texture-image_13683480.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .oscurecer {
+            background-color: rgba(37, 37, 37, 0.516);
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            position: absolute;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            width: 400px;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            background-color: #007704;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin: auto;
+        }
+
+        input[type="button"]:hover {
+            background-color: #016006;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="oscurecer" >
+        <div class="form" id="form">
+            <h1>Pedido de boligrafos</h1>
+            <form id="myForm">
+                <lable>
+                    Tipo de bolígrafo:
+                </lable>
+                <select id="cmbTipo">
+                    <option value="9">1</option>
+                    <option value="12">2</option>
+                    <option value="15">3</option>
+                    <option value="18">4</option>
+                </select>
+
+                <lable for="txtCantidad">
+                    Cantidad:
+                </lable>
+                <input type="number" min="0" id="txtCantidad">
+
+                <div class="bg-light w-100 mt-3">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <h4>
+                                Especial
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 d-flex justify-content-end">
+                            <label for="chkSerigrafia">Serigrafía</label>
+                        </div>
+                        <div class="col-6 d-flex justify-content-start align-items-start pt-1">
+                            <input type="checkbox" value="2" id="chkSerigrafia" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 d-flex justify-content-end">
+                            <label for="chkTroquelado">Troquelado</label>
+                        </div>
+                        <div class="col-6 d-flex justify-content-start align-items-start pt-1">
+                            <input type="checkbox" value="3" id="chkTroquelado" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row bg-light mt-3">
+                    <div class="col-6 d-flex justify-content-end"><label for="chkNuevo">Pedido Nuevo</label></div>
+                    <div class="col-6 d-flex justify-content-start align-items-start pt-1"><input type="checkbox"
+                            value="120" id="chkNuevo" /> </div>
+                </div>
+
+                <input type="button" value="Calcular" onclick="calcular()" />
+
+
+            </form>
+        </div>
+
+
+
+        <div class="factura bg-white w-50 mx-auto mt-5" id="factura" style="display: none;" >
+            <h1 class="text-dark p-5">Factura</h1>
+
+            <table class="table table-striped">
+                <tr>
+                    <th>Cantidad</th>
+                    <td id="cantidadBoligrafos"></td>
+                </tr>
+                <tr>
+                    <th>Serigrafía</th>
+                    <td id="serigrafiaCoste"></td>
+                </tr>
+                <tr>
+                    <th>Troquelado</th>
+                    <td id="troqueladoCoste"></td>
+                </tr>
+                <tr>
+                    <th>Pedido nuevo</th>
+                    <td id="pedidoNuevoCoste"></td>
+                </tr>
+                <tr>
+                    <th>Subtotal</th>
+                    <td id="subtotalCoste"></td>
+                </tr>
+                <tr>
+                    <th>Descuento</th>
+                    <td id="descuentoAplicado"></td>
+                </tr>
+                <tr>
+                    <th>Base Imponible</th>
+                    <td id="baseImponibleCoste"></td>
+                </tr>
+                <tr class="bg-black">
+                    <th class="table-dark fw-bold">Total</th>
+                    <td id="totalCoste" class="table-dark"></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        function calcular() {
+            let precio = parseInt(document.getElementById("cmbTipo").value);
+            let cantidad = parseInt(document.getElementById("txtCantidad").value);
+            let serigrafia = 0;
+            let troquelado = 0;
+            let pedidoNuevo = 0;
+            let trabajo = 0; //importe de serigrafía y troquelado
+            let subtotal = 0;
+            let descuento = 0;
+            let baseImponible = 0;
+            let aPagar = 0;
+
+            if (document.getElementById("chkSerigrafia").checked)
+                serigrafia = parseInt(document.getElementById("chkSerigrafia").value);
+
+            if (document.getElementById("chkTroquelado").checked)
+                troquelado = parseInt(document.getElementById("chkTroquelado").value);
+
+            trabajo = serigrafia + troquelado;
+
+            if (!document.getElementById("chkNuevo").checked || trabajo == 0)
+                pedidoNuevo = 0;
+            else
+                pedidoNuevo = 120;
+
+            subtotal = (precio + trabajo) * cantidad + pedidoNuevo;
+
+            if (cantidad < 200)
+                descuento = 0.2;
+            else if (cantidad < 500)
+                descuento = 0.25;
+            else if (cantidad < 1000)
+                descuento = 0.3;
+            else
+                descuento = 0.35;
+
+            
+            descuento = subtotal * descuento;
+
+            //baseImponible = subtotal - (subtotal * descuento);
+            baseImponible = subtotal -  descuento;
+
+            aPagar = baseImponible * 1.21;
+
+
+            pintar(cantidad, serigrafia, troquelado, pedidoNuevo, trabajo, subtotal, descuento, baseImponible, aPagar);
+
+        }
+
+        function pintar(cantidad, serigrafia, troquelado, pedidoNuevo, trabajo, subtotal, descuento, baseImponible, total) {
+            document.getElementById("form").style.display = "none";
+            document.getElementById("factura").style.display = "block";
+
+            document.getElementById("cantidadBoligrafos").innerHTML = cantidad;
+            document.getElementById("serigrafiaCoste").innerHTML = serigrafia * cantidad + " €";
+            document.getElementById("troqueladoCoste").innerHTML = troquelado * cantidad + " €";
+            document.getElementById("pedidoNuevoCoste").innerHTML = pedidoNuevo + " €";
+            document.getElementById("subtotalCoste").innerHTML = subtotal + " €";
+            document.getElementById("descuentoAplicado").innerHTML = descuento.toFixed(2) + " €";
+            document.getElementById("baseImponibleCoste").innerHTML = baseImponible + " €";
+            document.getElementById("totalCoste").innerHTML = parseFloat(total).toFixed(2) + " €";
+
+        }
+    </script>
+</body>
+
+</html>

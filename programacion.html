@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="Es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Primeras pruebas con JavaScript</h1>
+
+    <div id="frase"></div>
+    <script>
+        // var x="hola";
+        // x = 23.45;
+        // x = true;
+
+        const VALOR = 18.3;
+        alert(VALOR);
+
+        let frase = document.getElementById("frase");
+
+        let x = "hola";
+        let nombre = prompt("Dime tu nombre:") ;
+        let apellido = prompt("Apellido:");
+        let ciudad = prompt("Ciudad:");
+        let edad = prompt("Edad:");
+
+        alert("Hola " + nombre + ",\n se que te apellidas " + apellido + 
+              ",\n que tienes " + edad + " años\n y que vives en " + ciudad);
+
+        let concat = "Hola " + nombre + ", se que te apellidas " + apellido + 
+              ", que tienes " + edad + " años y que vives en " + ciudad;
+
+        frase.innerText = concat;
+        frase.style.background = "red";
+        frase.style.padding = "3px";
+    </script>
+</body>
+</html>

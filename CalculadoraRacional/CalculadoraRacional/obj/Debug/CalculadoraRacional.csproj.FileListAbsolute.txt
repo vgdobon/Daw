@@ -1,0 +1,7 @@
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\CalculadoraRacional\CalculadoraRacional\bin\Debug\CalculadoraRacional.exe.config
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\CalculadoraRacional\CalculadoraRacional\bin\Debug\CalculadoraRacional.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\CalculadoraRacional\CalculadoraRacional\bin\Debug\CalculadoraRacional.pdb
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\CalculadoraRacional\CalculadoraRacional\obj\Debug\CalculadoraRacional.csproj.AssemblyReference.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\CalculadoraRacional\CalculadoraRacional\obj\Debug\CalculadoraRacional.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\CalculadoraRacional\CalculadoraRacional\obj\Debug\CalculadoraRacional.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\CalculadoraRacional\CalculadoraRacional\obj\Debug\CalculadoraRacional.pdb

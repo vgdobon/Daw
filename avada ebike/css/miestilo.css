@@ -1,0 +1,118 @@
+
+*,p,h1,h2,h3,h4,h5,h6 {
+    font-family: "Golos Text", sans-serif;
+}
+.gigante{
+    font-size: 10rem;
+    font-weight: bold;
+}
+.sombra-texto {
+    text-shadow: 0 0 5px black;
+}
+/*************MENU***********************/
+#menuprincipal li{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+/*************COLORES***********************/
+.bg-verde{
+    background-color: lightgreen;
+}
+.oscurecer{
+    height: 1000px;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+/*************ESTRUCTURA***********************/
+#heroprincipal {
+    height: 450px;
+    background-image: url(../imgs/hero-1-scaled.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+#heroprincipal .row{
+    height: 400px;
+}
+#posibilidades {
+    min-height: 500px;
+    background-color: #eeeeee;
+}
+.caja-posibilidades-1, .caja-posibilidades-2, .caja-posibilidades-3 {
+    padding-top: 100px!important;
+    text-shadow: 0 0 10px black;
+    min-height: 250px;
+}
+@media (min-width: 992px){
+    .caja-posibilidades-1, .caja-posibilidades-2, .caja-posibilidades-3 {
+        padding-top: 250px!important;
+    }
+}
+.caja-posibilidades-1{
+    background-image: url(../imgs/blog-3.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.caja-posibilidades-2{
+    background-image: url(../imgs/avatar-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.caja-posibilidades-3{
+    background-image: url(../imgs/info-9-scaled.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+}
+
+.caja-modelo-1 , .caja-modelo-2{
+    min-height: 550px;
+    border: 1px solid rgba(191, 191, 191, 0.648);
+    border-radius: 10px;
+}
+
+.caja-modelo-1{
+    background-image: url(../imgs/bike-2.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    
+
+}
+
+.caja-modelo-2{
+    background-image: url(../imgs/bike-3.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+}
+#especificaciones{
+    min-height: 500px;
+}
+#herocita {
+    height: 600px;
+    background-image: url(../imgs/info-9-scaled.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;/*efecto parallax*/
+    overflow-y:hidden;
+}
+
+.margen-cita-neg {
+    margin-top: -100px;
+}
+
+.boton{
+    background-color: rgb(228, 20, 20);
+    padding: 15px 20px;
+    
+    border: none;
+    color: #eeeeee;
+    font-weight: bold;
+}

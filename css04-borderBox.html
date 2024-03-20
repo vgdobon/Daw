@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Reseteando</title>
+    <!-- primero el css reset, luego el resto -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* CSS para toda la página */
+        p {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav id="menuPrincipal">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="seccion1" class="fondo-darkolive">
+        <div class="container">
+            <h1>Tipos de css</h1>
+            <h2>Repaso intensivo de css</h2>
+            <p>Lorem <a href="#seccion3">ipsum dolor sit</a> <span>amet consectetur</span> adipisicing elit.
+                Neque maiores pariatur quibusdam magnam.
+                Obcaecati incidunt id recusandae sequi magni veniam,
+                est necessitatibus maxime aspernatur quod, iusto nihil? Quasi, vitae quis.</p>
+        </div>
+    </section>
+
+    <section id="seccion2">
+        <div class="container">
+
+            <h2> Párrafos con clases</h2>
+            <span>Temporibus aspernatur facere vel dolor</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <span>Temporibus aspernatur facere vel
+                    dolor</span>
+                eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed itaque beatae, officia
+                explicabo cumque ex nam.</p>
+
+            <p class="fondo-naranja texto-blanco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+                aspernatur facere vel dolor eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed
+                itaque beatae, officia explicabo cumque ex nam.</p>
+
+            <p class="fondo-darkolive texto-blanco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+                aspernatur facere vel dolor eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed
+                itaque beatae, officia explicabo cumque ex nam.</p>
+            <span>Temporibus aspernatur facere vel dolor</span>
+        </div>
+    </section>
+    <section id="seccion3">
+        <!-- style CSS in line -->
+        <div class="container">
+            <h2 style="color: blueviolet;text-decoration: underline;">Usando CSS local</h2>
+
+            <p style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aspernatur facere
+                vel
+                dolor eligendi? Ipsa, quae totam! Consequatur, recusandae! Fugit, odit. Minima sed itaque beatae,
+                officia
+                explicabo cumque ex nam.</p>
+        </div>
+    </section>
+
+</body>
+
+</html>

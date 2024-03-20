@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Alimentación</title>
+
+
+
+    <style>
+        label {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Carrito de la compra</h1>
+    <form action="">
+
+        <datalist id="listaCiudades">
+            <option value="za">Zaragoza</option>
+            <option value="hu">Huesca</option>
+            <option value="te">Teruel</option>
+            <option value="to">Toledo</option>
+            <option value="ma">Madrid</option>
+            <option value="ba">Barcelona</option>
+        </datalist>
+
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="txtEmail">Email:</label>
+            <input type="email" name="txtEmail" id="txtEmail" placeholder="tucorreo@ejemplo.com">
+            <br>
+
+            <label for="txtDireccion">Direccion:</label>
+            <input type="text" placeholder="Calle, avenida...">
+            <br>
+
+            <label for="Ciudad">Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" list="listaCiudades">
+            <br>
+
+            <label for="txtTel">Teléfono</label>
+            <input type="tel" name="txtTlf" id="txtTlf" placeholder="+34..">
+            <br>
+            <p>Dime tu edad:</p>
+            <input type="radio" name="rbtEdad" id="rbtJoven" value="joven" checked>
+            <label for="rbtJoven">Menos de 35</label><br>
+            <input type="radio" name="rbtEdad" id="rbtMaduro" value="maduro">
+            <label for="rbtMaduro">Mas de 35</label><br>
+            <input type="radio" name="rbtEdad" id="rbtExperto" value="experto">
+            <label for="rbtExperto">Más de 65</label>
+            <br>
+            <input type="button" value="Ver botón" onclick="verCategoria()">
+
+
+        </fieldset>
+        <label for="txtSeccion">Seccion:</label>
+        <select id="txtSeccion">
+            <option value="fruta">Fruteria</option>
+            <option value="carne">Carniceria</option>
+            <option value="pescado">Pescaderia</option>
+        </select>
+        <br>
+
+        <select name="producto" id="producto">
+
+        </select>
+        <label for="txtProducto">Producto:</label>
+        <input type="text" name="txtProducto" id="txtProducto" placeholder="Producto..">
+        <br>
+
+        <label for="txtPeso">Peso/Volumen:</label>
+        <input type="text" name="txtPeso" id="txtPeso" placeholder="Peso/Volumen..">
+        <br>
+
+        <label for="rngCantidad">Cantidad:</label>
+        <input type="number" name="rngCantidad" id="rngCantidad" min="0" max="20">
+        <output></output>
+        <br>
+
+
+
+        <label for="comentarios"></label>
+        <textarea name="" id="comentario" cols="60" rows="40"></textarea>
+        <br>
+
+        <label for="dias">Dias de la semana</label>
+        <select name="dias" id="dias" size="1">
+            <optgroup label="Entresemana">
+                <option value="lu">Lunes</option>
+                <option value="ma">Martes</option>
+                <option value="mi">Miércoles</option>
+                <option value="ju">Jueves</option>
+                <option value="vi">Viernes</option>
+            </optgroup>
+            <optgroup label="Fin de semana">
+                <option value="sa">Sábado</option>
+                <option value="do">Domingo</option>
+            </optgroup>
+        </select>
+
+
+        <label for="txtCalificacion">Calificacion</label>
+        <input type="range" name="txtCalificacion" id="txtCalificacion" min="0" max="5">
+        <input type="button" value="botón" onclick="ponerNombre()">
+    </form>
+
+
+    <div id="salida"></div>
+
+
+    <script>
+        // let fruta = ["Manzana", "Pera", "Limón"];
+        // let carne = ["Cerdo", "Ternera", "Pollo"];
+        // let pescado = ["Lubina", "Atún", "Salmón"];
+
+
+        // let alimentos = [fruta, carne, pescado];
+
+        function verCategoria(){
+            let eleccion = document.getElementsByName("rbtEdad");
+            
+            let valor="";
+
+            for (let i = 0; i < eleccion.length; i++) {
+                const element = eleccion[i];
+                if (element.checked) {
+                    valor= element.value;
+                }
+            }
+
+            alert(valor);
+        }
+
+        function ponerNombre() {
+            let seccion = document.getElementById("txtSeccion");
+            let seccionValue =  seccion.options[seccion.selectedIndex].text;
+            alert(seccionValue);
+            document.getElementById("salida").innerText = seccionValue;
+            document.getElementById("comentario").value = seccionValue;
+        }
+
+    </script>
+
+</body>
+
+</html>

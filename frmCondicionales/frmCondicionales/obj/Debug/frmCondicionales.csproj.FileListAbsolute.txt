@@ -1,0 +1,12 @@
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\bin\Debug\frmCondicionales.exe.config
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\bin\Debug\frmCondicionales.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\bin\Debug\frmCondicionales.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.csproj.AssemblyReference.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.Form1.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.Properties.Resources.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.csproj.GenerateResource.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.frmDado.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.JuegosDadosForm.resources

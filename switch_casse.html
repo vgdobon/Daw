@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch_case</title>
+</head>
+<body>
+
+    <h1>Notas obtenidas</h1>
+
+    <label for="nota">Elegir nota</label>
+    <select name="nota" id="nota" onchange="cambiarColor()">
+        <option value="Insuficiente">0</option>
+        <option value="Insuficiente">1</option>
+        <option value="Insuficiente">2</option>
+        <option value="Muy deficiente">3</option>
+        <option value="Muy deficiente">4</option>
+        <option value="Suficiente">5</option>
+        <option value="Bien">6</option>
+        <option value="Notable">7</option>
+        <option value="Notable">8</option>
+        <option value="Sobresaliente">9</option>
+        <option value="Sobresaliente">10</option>
+    </select>
+
+    <div id="divSalida"></div>
+
+    <script>
+
+        function cambiarColor(){
+
+            let eleccion = document.getElementById("nota").value;
+            let salida = document.getElementById("divSalida");
+            let colorNota="";
+
+        switch(eleccion){
+            case 'Insuficiente':
+            case 'Muy deficiente':
+                colorNota = "red";
+                break;
+            case 'Suficiente':
+            case 'Bien':
+            case 'Notable':
+                colorNota = 'yellow';
+                break;
+            case 'Sobresaliente':
+                colorNota = 'lightgreen';
+                break;
+            default:
+
+                break;
+        }
+
+        alert(colorNota);
+        
+        salida.style.color = colorNota;
+        salida.innerHTML = eleccion;
+        
+        }
+
+        
+    </script>
+</body>
+</html>

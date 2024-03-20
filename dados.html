@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados</title>
+</head>
+
+<body>
+    <input type="button" value="Lanzar" onclick="jugarDados()">
+
+    <div id="salida"></div>
+
+    <input type="button" value="Lanzar moneda" onclick="lanzarMoneda()">
+
+    <div id="salidaMoneda"></div>
+
+    <input type="button" value="Lanzar dado" onclick="lanzarDado()">
+
+    <div id="salidaDado"></div>
+
+
+    <input type="button" value="Adivinar" onclick="adivinar()">
+    <div id="salidaAdivina"></div>
+
+    <script>
+
+        function adivinar() {
+            let salidaDiv = document.getElementById("salidaAdivina");
+            let numeroIn = document.getElementById("unumero");
+
+            let numeroRandom = getRandomIntInclusive(1, 100);
+            let numeroUser = 0;
+            let intentos = 0;
+            setTimeout(function () {
+                do {
+                    numeroUser = parseInt(prompt("Adivina el numero"));
+                    if (numeroUser != numeroRandom) {
+                        if (numeroUser > numeroRandom) {
+                            alert("El número es menor");
+                        } else {
+                            alert("El número es mayor");
+                        }
+                        intentos++;
+                    }
+
+                } while (numeroRandom != numeroUser)
+            }, 2000);
+
+
+            salidaDiv.innerHTML = "Has Ganado en " + intentos + " intentos.";
+        }
+
+        function lanzarDado() {
+            let salidaDado = document.getElementById("salidaDado");
+            let salida = "";
+            let num = 0;
+            let dado1 = 0;
+            let dado2 = 0;
+            let dado3 = 0;
+            let dado4 = 0;
+            let dado5 = 0;
+            let dado6 = 0;
+
+            for (i = 0; i < 50000; i++) {
+                num = getRandomIntInclusive(1, 6);
+
+                switch (num) {
+                    case 1:
+                        dado1++;
+                        break;
+                    case 2:
+                        dado2++;
+                        break;
+                    case 3:
+                        dado3++;
+                        break;
+                    case 4:
+                        dado4++;
+                        break;
+                    case 5:
+                        dado5++;
+                        break;
+                    case 6:
+                        dado6++;
+                        break;
+                }
+            }
+
+            salidaDado.innerHTML = "Unos:" + dado1 +
+                "<br>Doses:" + dado2 +
+                "<br>Treses:" + dado3 +
+                "<br>Cuatros:" + dado4 +
+                "<br>Cincos:" + dado5 +
+                "<br>Seiseis:" + dado6;
+        }
+
+        function lanzarMoneda() {
+            let salidaMoneda = document.getElementById("salidaMoneda");
+            let salida;
+            let caras = 0;
+            let cruces = 0;
+            let numRandom;
+
+            for (i = 0; i < 5000; i++) {
+                numRandom = getRandomIntInclusive(0, 9);
+
+                if (numRandom < 5) {
+                    cruces++;
+                } else {
+                    caras++;
+                }
+            }
+
+            salidaMoneda.innerHTML = 'Caras= ' + caras + '<br>Cruces: ' + cruces + '.';
+        }
+
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive 
+        }
+
+        function jugarDados() {
+            let salidaDiv = document.getElementById("salida");
+            let salida = '';
+
+            let num1 = [];
+            let suma = 0;
+
+            for (i = 0; i < 3; i++) {
+                num1[i] = Math.floor(Math.random() * 6) + 1;
+            }
+
+            for (j = 0; j < num1.length; j++) {
+                suma += num1[j];
+            }
+
+            for (h = 0; h < num1.length; h++) {
+                if (h + 1 < num1.length) {
+                    salida += num1[h] + '+';
+                } else {
+                    salida += num1[h];
+                }
+            }
+
+            salidaDiv.innerHTML = salida + '=' + suma + ' --> ' + resultado(suma);
+
+        }
+
+
+        function resultado(suma) {
+            if (suma >= 15) {
+                return 'Has ganado';
+            } else {
+                return 'Has perdido';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

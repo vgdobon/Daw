@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo</title>
+</head>
+<body> 
+
+    <h1>Calculo de propiedades de un circulo</h1>
+    <label for="radio">Radio:</label>
+    <input type="number" id="radio">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <br>
+
+    <label for="longitud">Longitud:</label>
+    <input type="text" id="longitud">
+    <br>
+
+    <label for="area">Area:</label>
+    <input type="text" id="area">
+    <br>
+
+    <label for="volumen">Volumen:</label>
+    <input type="text" id="volumen">
+
+    <script>
+        function calcular(){
+            let radio = parseInt(document.getElementById("radio").value);
+            let longitudOut = document.getElementById("longitud");
+            let areaOut = document.getElementById("area");
+            let volumenOut = document.getElementById("volumen");
+
+            let longitud = Math.PI * 2 * radio;
+            let area = Math.PI * radio**2;
+            let volumen = 3/4 * Math.PI **3;
+
+            alert(longitud + " " +area+ " " +volumen);
+
+        
+            longitudOut.value = longitud.toFixed(3);
+            areaOut.value = area.toFixed(3);
+            volumenOut.value = volumen.toFixed(3);
+
+
+
+        }
+    </script>
+    
+</body>
+</html>

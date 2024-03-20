@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="num1"></label>
+    <input type="number" id="num1">
+    <input type="button" value="¿Es mayor o menor que 50?" onclick="comparar50()">
+    <div id="salida50"></div>
+    <br>
+
+    <input type="number" id="numParImpar">
+    <input type="button" value="¿Es par o impar?" onclick="identificarParImpar()">
+    <div id="salidaParImpar"></div>
+    <br>
+
+    <input type="number" id="numero1">
+    <input type="number" id="numero2">
+    <div id="salidaComparar"></div>
+    <br>
+
+    <input type="button" value="¿Cual es el mayor?" onclick="compararMaxMin()">
+    <br><br>
+    <p>Introducido una nota y que salga su calificación</p>
+    <label for="nota">Nota:</label>
+    <input type="text" id="nota">
+
+    <label for="calificación">Calificación</label>
+    <input type="text" id="calificación">
+
+    <input type="button" value="Calcular calificación" onclick="calificar()">
+
+    <script>
+        function comparar50() {
+            let numero = document.getElementById("num1").value;
+            numero = parseInt(numero);
+
+            let salida;
+
+            if (numero > 50) {
+                salida = "El numero " + numero + " es mayor que 50";
+            } else if (numero < 50) {
+                salida = "El numero " + numero + " es menor que 50";
+            } else {
+                salida = "El numero " + numero + " es igual a 50";
+            }
+
+            document.getElementById("salida50").innerHTML = salida;
+        }
+
+        function identificarParImpar() {
+            let numParImpar = document.getElementById("numParImpar").value;
+            numParImpar = parseInt(numParImpar);
+
+            let salida;
+
+            if (numParImpar % 2 == 0) {
+                salida = "El numero " + numParImpar + " es par.";
+            } else {
+                salida = "El numero " + numParImpar + " es impar.";
+            }
+
+            document.getElementById("salidaParImpar").innerHTML = salida;
+
+        }
+
+        function compararMaxMin() {
+            let numero1 = document.getElementById("numero1").value;
+            numero1 = parseInt(numero1);
+
+            let numero2 = document.getElementById("numero2").value;
+            numero2 = parseInt(numero2);
+
+            let salida;
+
+            let mayor = numero2;
+            let menor = numero1;
+
+            if (numero1 == numero2) {
+                salida = "Los numeros son iguales";
+            } else {
+                if (numero1 > numero2) {
+                    mayor = numero1;
+                    menor = numero2;
+                }
+                salida = "El número mayor es: " + mayor + "<br>" +
+                    "El número menor es: " + menor;
+            }
+            document.getElementById("salidaComparar").innerHTML = salida;
+        }
+
+        function calificar() {
+            let nota = document.getElementById("nota").value;
+            let calificacion;
+            let salida;
+
+            if (ciEquals(nota, "A")) {
+                salida="Excelente";
+            } else if (ciEquals(nota, "B")) {
+                salida="Muy Bien";
+            } else if (ciEquals(nota, "C")) {
+                salida="Normal";
+            } else if (ciEquals(nota, "D")) {
+                salida="Deber mejorar";
+            }else if (ciEquals(nota, "D")) {
+                salida="Deber mejorar";
+            }else if (ciEquals(nota, "E")) {
+                salida="No te enteras de nada";
+            }else{
+                salida="NOTA NO VÁLIDA"
+            }
+
+            document.getElementById("calificación").value=salida;
+            
+        }
+
+        function ciEquals(a, b) {
+            return typeof a === 'string' && typeof b === 'string'
+                ? a.localeCompare(b, undefined, { sensitivity: 'accent' }) === 0
+                : a === b;
+        }
+    </script>
+</body>
+
+</html>

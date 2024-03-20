@@ -1,0 +1,7 @@
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Empleados\Empleados\obj\Debug\Empleados.csproj.AssemblyReference.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Empleados\Empleados\obj\Debug\Empleados.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Empleados\Empleados\bin\Debug\Empleados.exe.config
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Empleados\Empleados\bin\Debug\Empleados.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Empleados\Empleados\bin\Debug\Empleados.pdb
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Empleados\Empleados\obj\Debug\Empleados.exe
+C:\Users\Profesor\DesarrolloAplicacionesCertificado\Empleados\Empleados\obj\Debug\Empleados.pdb

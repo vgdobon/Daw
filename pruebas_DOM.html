@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header id="encabezadoGeneral"><h1 id="encabezado1">Probando con el DOM</h1><h2>Navegando por el DOM</h2></header>
+    <p>Este es el párrafo</p>
+    <p>Este es el <strong>segundo</strong> párrafo</p>
+    <div>
+        <input type="button" value="Acceder a elementos"
+                onclick="acceder()">
+    </div>
+    <script>
+        function acceder(){
+            let miNodo = document.getElementById("encabezadoGeneral");
+            miNodo.childNodes[0].firstChild.nodeValue = "A ver que pasa";
+            
+        }
+
+    </script>
+</body>
+</html>

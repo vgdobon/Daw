@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        ol li ol.cocina li{
+            list-style-image: url(images/sarten.png);
+        }
+
+        li#sarten+li{
+            list-style-image: url(images/olla-expres.png);
+        }
+        ol.lista+li+ol li~li~li{
+            list-style-image: url(images/parrilla.png);
+        }
+
+    </style>
+</head>
+
+<body>
+    <ol class="lista" type="1">
+        <li>Cocina
+            <ol type="a" class="cocina">
+                <li id="sarten">Sartén           25cm</li>
+                <li id="olla">Olla exprés</li>
+                <li id="parrilla">Parrilla grande</li>
+            </ol>
+        </li>
+        <li>Deportes
+            <ol type="i" class="deportes">
+                <li>Gafas antiviento</li>
+                <li>Zapatillas de descanso</li>
+                <li>Bastones telescopicos</li>
+            </ol>
+        </li>
+    </ol>
+</body>
+
+</html>

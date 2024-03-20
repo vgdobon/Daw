@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de boligrafos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col6 justify-content-center">
+            <form action="" width="50%">
+                <label for="tipos">Tipos</label>
+                <select name="tipos" id="tipos">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <br>
+
+                <label for="cantidad">Número de boligrafos:</label>
+                <input type="text" name="cantidad" id="cantidad">
+
+                <p>Trabajo especial</p>
+                <input type="radio" name="especial" id="normal" value="0">
+                <label for="normal">Sin trabajo especial</label><br>
+                <input type="radio" name="especial" id="seri" value="2">
+                <label for="seri">Serigrafiado</label><br>
+                <input type="radio" name="especial" id="troque" value="3">
+                <label for="troque">Troquelado</label><br>
+                <input type="radio" name="especial" id="seriTroque" value="5">
+                <label for="seriTroque">Serigrafiado + Troquelado</label><br>
+                <br>
+                <input type="checkbox" name="pedidoNuevo" id="pedidoNuevo">
+                <label for="pedidoNuevo">Pedido nuevo</label> <br>
+
+                <input type="button" value="Calcular" onclick="calcular()">
+            </form>
+        </div>
+    </div>
+
+
+    <div id="salida" class="mt-5 pt-5">
+        <table class="table">
+            <tr>
+                <th>Tipo de boligrafo</th>
+                <td id="tipoBoli"></td>
+            </tr>
+
+            <tr>
+                <th>Cantidad de boligrafos</th>
+                <td id="cantidadBolis"></td>
+            </tr>
+            <tr>
+                <th>Coste base:</th>
+                <td id="costeBase"></td>
+            </tr>
+
+            <tr>
+                <th>Trabajo especial</th>
+                <td id="especial">
+                    <input type="checkbox" name="" id="sinEspecial">
+                    <label for="sinEspecial">Sin trabajo especial</label> <br>
+                    <input type="checkbox" name="seriResul" id="seriResul">
+                    <label for="seriResul">Serigrafia</label> <br>
+                    <input type="checkbox" name="troqueResul" id="troqueResul">
+                    <label for="troqueResul">Troquelado</label> <br>
+                    <input type="checkbox" name="seriTroqueResul" id="seriTroqueResul">
+                    <label for="seriTroqueResul">Serigrafia + troquelado</label> <br>
+                </td>
+            </tr>
+            <tr>
+                <th>Coste por trabajo especial</th>
+                <td id="costeEspecial"></td>
+            </tr>
+            <tr>
+                <th>Nuevo pedido:</th>
+                <td id="costeNuevoPedido"><input type="checkbox" name="nuevoPedido" id="nuevoPedido"></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td id="precioTotal"></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <script>
+        function calcular() {
+            let tipo = document.getElementById("tipos").value;
+            let cantidad = document.getElementById("cantidad").value;
+            let especial;//= document.querySelector('input[name=especial]:checked');
+            let nuevo = false;
+            let precioTotal = 0;
+            let costeEspecial = 0;
+            let costeBase = 0;
+
+            //alert(especial.value);
+
+            if (document.getElementById("normal").checked) {
+                especial = '0';
+            } else if (document.getElementById("seri").checked) {
+                especial = '2';
+            } else if (document.getElementById("troque").checked) {
+                especial = '3';
+            } else if (document.getElementById("seriTroque").checked) {
+                especial = '5';
+            } else {
+                alert("No ha funcionado el trabajo especial");
+            }
+
+            console.log(especial);
+
+            if (document.getElementById("pedidoNuevo").checked) {
+                nuevo = true;
+            }
+
+            console.log("nuevo:" + nuevo);
+
+
+            if ((especial == "2" || especial == "3" || especial == "5") && nuevo) {
+                precioTotal += 120;
+            }
+
+            console.log("Precio total:" + precioTotal);
+
+            switch (especial) {
+                case '2':
+                    costeEspecial = cantidad * 2;
+
+                    break;
+                case '3':
+                    costeEspecial = cantidad * 3;
+                    break;
+                case '5':
+                    costeEspecial = cantidad * 5;
+                    break;
+
+            }
+
+            console.log("Coste especial:" + costeEspecial);
+
+            precioTotal += costeEspecial;
+
+
+            switch (tipo) {
+                case '1':
+                    costeBase = cantidad * 9;
+                    precioTotal += cantidad * 9;
+                    break;
+                case '2':
+                    costeBase = cantidad * 12;
+                    precioTotal += cantidad * 12;
+                    break;
+                case '3':
+                    costeBase = cantidad * 15;
+                    precioTotal += cantidad * 15;
+                    break;
+                case '4':
+                    costeBase = cantidad * 18;
+                    precioTotal += cantidad * 18;
+                    break;
+            }
+
+            console.log("Precio total:" + precioTotal);
+
+            //salida
+            document.getElementById("tipoBoli").innerHTML = tipo;
+            document.getElementById("cantidadBolis").innerHTML = cantidad;
+            if (especial == '2') {
+                document.getElementById("seriResul").checked = true;
+            } else if (especial == '3') {
+                document.getElementById("troqueResul").checked = true;
+            } else if (especial == '5') {
+                document.getElementById("seriTroqueResul").checked = true;
+            } else {
+                document.getElementById("sinEspecial").checked = true;
+            }
+            document.getElementById('costeBase').innerHTML = costeBase + "€";
+            document.getElementById('costeEspecial').innerHTML = costeEspecial + "€";
+
+            if (nuevo) {
+                nuevoPedido
+                document.getElementById("nuevoPedido").checked = true;
+                document.getElementById("costeNuevoPedido").innerHTML = "120 €";
+            } else {
+                document.getElementById("costeNuevoPedido").innerHTML = "0 €";
+            }
+
+            document.getElementById("precioTotal").innerHTML = precioTotal + "€";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+
+        body{
+            min-inline-size: 0;
+            min-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primer formulario</h1>
+    <form action="" name="f1" id="f1" method="post">
+        <p>
+            <label for="txtNombre">Nombre:</label>
+            <input type="text" id="txtNombre" maxlength="30" autofocus spellcheck="true" ><br><br>
+            <br>
+
+            <label for="txtApellido">Apellido:</label>
+            <input type="text" id="txtApellido" autocapitalize="words" size="30"><br><br>
+            <br>
+
+            <label for="txtCiudad">Ciudad:</label>
+            <input type="text" id="txtCiudad" value="Teruel" placeholder="Teruel" spellcheck="true">
+            <br>
+
+            <label for="txtEdad">Edad:</label>
+            <input type="number" id="txtEdad" min="18" max="65">
+            <br>
+
+            <label for="txtHijos">Hijos:</label>
+            <input type="range" name="txtHijos" id="txtHijos" min="0" max="10" onInput="this.nextElementSibling.value = this.value">
+            <output></output>
+            <br>
+
+            <label for="txtEmail">Email:</label>
+            <input type="email" name="txtEmail" id="txtEmail">
+            <br>
+
+            <label for="txtTlf">Teléfono:</label>
+            <input type="tel" name="txtTlf" id="txtTlf">
+            <br>
+
+            <p>Comentarios:</p>
+            <br>
+            <label for="txtOpinion"></label>
+            <textarea spellcheck="true" name="txtOpinion" id="txtOpinion" cols="40" rows="20" maxlength="10"></textarea>
+        </p>
+        <p>
+            <button>Enviar</button>
+            <input type="button" value="input">
+        </p>
+    </form>
+</body>
+</html>

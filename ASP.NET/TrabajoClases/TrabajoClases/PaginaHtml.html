@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uso controles HTML</title>
+</head>
+<body>
+	<form>
+		<p>
+            Escribe un texto: <input type="text" name="texto" id="txtFrase"/>
+        </p>
+        <p>
+			<input type="button"  value="Mostrar" onclick="mostrarInfo()"/>
+        </p>
+		<p id="salida">
+
+        </p>
+    </form>
+
+	<script>
+		function mostrarInfo() {
+            document.getElementById("salida").innerHTML = document.getElementById("txtFrase").value;
+}
+    </script>
+</body>
+</html>

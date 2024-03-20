@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        h1 {
+            border: 4px blue double;
+            padding: 10px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            border: 3px red dotted;
+        }
+
+        ol {
+            list-style-type: armenian;
+        }
+
+        #par1 {
+            font-family: 'Comic Sans Ms';
+            font-size: large;
+        }
+
+        p.verde {
+            color: green;
+            text-decoration: underline;
+        }
+
+        strong {
+            color: brown;
+            font-weight: normal;
+        }
+
+        mark {
+            background-color: chartreuse;
+        }
+
+        span {
+            text-decoration: line-through;
+        }
+
+        kbd {
+            font-family: "Victor Mono", monospace;
+            padding: 2px 6px;
+            background: #eee;
+            border: 5px solid #bbb;
+            border-left-width: 2px;
+            border-top-width: 2px;
+            border-bottom: 5px solid #777;
+            border-right: 5px solid #777;
+        }
+        #sombras{
+            color: aqua;
+            text-shadow: -5px 4px 5px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="sombras">Hoy es viernes y mañana será sabado</h1>
+
+    <h1 class="verde">Probando algunas propiedades <abbr title="Cascading Style Sheet">CSS</abbr> </h1>
+
+    <h2>El <mark>Zaragoza</mark> volvió a perder</h2>
+
+    <h3>El <u>Huesca</u> tambien perdió</h3>
+
+    <p id="par1">
+        Hoy es <em>lunes</em> y mañana será <strong>martes,</strong>
+        Hoy es <s>lunes</s> y mañana será martes,
+        Hoy es <span>lunes y mañana será martes,</span>
+        <small>Hoy es lunes</small> y mañana será martes,
+        Hoy es lunes <time datetime="30/11/2023">30 de Noviembre de 2023</time> y mañana será martes,
+    </p>
+
+    <p style="color: blue;">
+        Hoy es lunes y mañana será martes,
+        Hoy es lunes y mañana será martes,
+        <br>
+        Hoy es lunes y mañana será martes,
+        Hoy es lunes y mañana será martes,
+        Hoy es lunes y mañana será martes,
+    </p>
+
+    <p>Para guardar un documento teclee <kbd>CTRL</kbd>+<kbd>S</kbd></p>
+    <p>Halla la <var>X</var> en la ecuación.</p>
+
+    <pre>
+        <code class="language-javascript">
+          function alertMessage() {
+            return "ALERTA: El lector es demasiado atractivo.";
+          }
+        </code>
+    </pre>
+
+    <p>El software ha sido publicado y soporta los formatos PNG y JPG.</p>
+    <ins datetime="2018-04-22" cite="https://afordin.com/v2">
+        <p>Versión 2.0: El software soporta el formato WEBP.</p>
+    </ins>
+    <ins datetime="2022-07-15" cite="https://afordin.com/v2.5">
+        <p>Versión 2.5: El software soporta el formato AVIF.</p>
+    </ins>
+</body>
+
+</html>

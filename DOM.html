@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            width: 300px;
+        }
+
+        /* td{
+            text-align: center;
+        } */
+
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 200px;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <h1 id="encabezado">Modelo de objetos del documento</h1>
+    <table>
+        <tr>
+            <td><input type="button" value="Lunes" onclick="responderEvento()"></td>
+            <td><input type="button" value="Martes" onclick="alinearCeldas()"></td>
+            <td><input type="button" value="Miércoles"></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+    <div id="salida"></div>
+
+
+    <script>
+        function responderEvento(){
+            document.getElementsByTagName("input")[2].onclick = () => {
+                alert("eoooo!");
+            };
+        }
+
+        document.getElementById("encabezado").addEventListener("mouseover",() => {
+            alert("eoo!");
+            
+        })
+
+        let body = document.getElementById("body");
+        let color = ['000','000','000'];
+        let sumaAzul = 0;
+        let sumaRojo = 0;
+        let sumaVerde = 0;
+        let sumaColores = 0;
+
+        id = setInterval(frame, 50);
+
+        function frame() {
+            if (sumaColores > 780) {
+                clearInterval(id);
+            } else {
+                if(sumaRojo<250){
+                    sumaRojo+=10;
+                    sumaColores+=10;
+                }else if(sumaVerde<250){
+                    sumaVerde += 10;
+                    sumaColores+=10;
+                }else{
+                    sumaAzul+= 10;
+                    sumaColores+=10;
+                }
+                
+                body.style.backgroundColor = "RGB("+sumaRojo + "," + sumaVerde + "," + sumaAzul + ")";
+            }
+        }
+
+        function alinearCeldas() {
+            let celdas = document.getElementsByTagName('td');
+            console.log(celdas);
+            for (let index = 0; index < celdas.length; index++) {
+                const element = celdas[index];
+                element.style.textAlign = 'right';
+                // console.log(element.style)
+                // element.setAttribute("textAlign", "right");
+            }
+
+            // celdas.forEach(element => {
+            //     let elemento = element;
+            //     elemento.style.textAlign= "right";
+            // });
+
+        }
+
+        let salida = document.getElementById('salida');
+
+        body.addEventListener("mouseover", (event) => {
+            console.log(event);
+            salida.innerHTML = `${event.target.value}`
+        })
+
+
+
+    </script>
+</body>
+
+</html>

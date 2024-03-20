@@ -1,0 +1,25 @@
+.dobleSubrallado{
+    text-decoration:underline;
+    text-decoration-style:double;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.italica{
+    font-style: italic;
+}
+
+.divCentrado{
+    
+    width: 60%;
+    margin-left: 10%;
+    border-style: 1px solid;
+    padding-left: 20%;
+    background-color: blanchedalmond;
+}
+
+li{
+    list-style-type: georgian;
+}

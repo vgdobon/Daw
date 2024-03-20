@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round</title>
+</head>
+<body>
+    
+    <input type="text" name="numero" id="numero">
+    <input type="button" onclick="trucar()" value="Truncar">
+    <input type="button" value="Floor" onclick="floor()">
+    <div id="salida"></div>
+
+    <br>
+
+    <label for="numeros">Cuantos numeros quieres</labe>
+    <input type="text" id="numeros">
+    <br>
+
+    <label for="min">Que numero minimo es posible</labe>
+    <input type="text" id="min">
+    <br>
+
+    <label for="max">Que numero maximo es posible</labe>
+    <input type="text" id="max">
+    <br>
+
+
+    <input type="button" value="Aleatorios" onclick="aleatorio()">
+
+    <div id="salidaDiv"></div>
+
+    <br><br>
+
+    <label for="tabla">La tabla de que numero quieres</label>
+    <input type="text" id="tabla">
+
+    <input type="button" value="Ver tabla" onclick="hacerTabla()">
+       
+    <input type="button" value="Sumar" onclick="sumarPromedio()">
+    <input type="button" value="Pedir numero" onclick="sumarNumeros()">
+    <input type="button" value="factorial" onclick="factorial()">
+
+    <div id="salidaTabla"></div>
+
+    <script>
+
+        function factorial(){
+            let factoriales = parseInt(prompt("Numero para factorial"));
+            let sumatorio = 1;
+            let salida = "<h2>Factorial de " + factoriales + " es: ";
+
+            while(factoriales>0){
+                sumatorio = sumatorio * factoriales;
+                factoriales--;
+            }
+
+            salida+= sumatorio;
+            document.getElementById("salidaTabla").innerHTML=salida;
+        }
+
+        function sumarNumeros(){
+            let i = 0;
+            let suma = 0;
+            let salida="";
+            let salidDiv = document.getElementById("salidaTabla");
+            let numero=0;
+
+            do{
+                numero = parseInt(prompt("Dime un numero"));
+                if(numero!=999){
+                    suma+=numero;
+                    i++;
+                }
+                
+            }
+            while(numero != 999)
+                
+            
+
+            salidDiv.innerHTML="Suma:" + suma + " Promedio:" + suma/i;
+
+        }
+
+        function sumarPromedio(){
+        
+            let suma=0;
+            let salida="";
+            let i=1;
+
+            while(i<=5){
+                suma += parseFloat(prompt("Dime el numero " + i + ":"));
+                i++;
+            }
+
+            let salidaTabla = document.getElementById("salidaTabla");
+
+            
+            let promedio = (suma/5).toFixed(2);
+
+            salida= "Suma=" + suma + "<br> Promedio=" + promedio;
+            salidaTabla.innerHTML=salida;
+
+        }        
+
+        function hacerTabla(){
+            let tabla = parseInt(document.getElementById("tabla").value);
+            let salidaDiv =  document.getElementById("salidaTabla");
+            let numero=0;
+            let salida="";
+            let i = 0;
+
+            while(i<=10){
+                numero=tabla*i;
+                salida+= tabla + "*" + i + "=" + numero+"<br>";
+                i++;
+            }
+
+            salidaDiv.innerHTML=salida;
+
+
+        }
+
+        function aleatorio(){
+
+            let numeros = parseInt(document.getElementById("numeros").value) ;
+            let max = parseInt(document.getElementById("max").value);
+            let min = parseInt(document.getElementById("min").value);
+            let salidaDiv = document.getElementById("salidaDiv");
+            let salida="";
+            
+            let array = []; 
+            
+            for(i=0;i<numeros;i++){
+                array[i] = calcularAleatorios(max,min);
+            }
+
+            array.forEach(element => {
+                salida+=element + ",";
+            });
+
+            salidaDiv.innerHTML=salida;
+
+        }
+
+        function calcularAleatorios(min,max){
+            
+            return Math.floor(Math.random() * max - min +1) + min ;
+        }
+
+        let salida = document.getElementById("salida");
+
+        function floor(){
+            let numero = parseFloat(document.getElementById("numero").value);
+            salida.innerHTML += "<br>Floor:" + Math.floor(numero);
+        }
+
+        function trucar(){
+            let numero = parseFloat(document.getElementById("numero").value);
+
+            salida.innerHTML += "<br>Truncar:" + Math.trunc(numero);
+        }
+
+
+
+/*
+        let numero = parseFloat(prompt("Dime un numero"));
+        let decimales = parseInt(prompt("Cuantos decimales quieres"));
+
+        let salida = document.getElementById("salida");
+
+        numero = (Math.round(numero * 10 **decimales))/10**decimales;
+
+        salida.innerText = "Numero redondeado: " + numero;
+*/
+    </script>
+</body>
+</html>

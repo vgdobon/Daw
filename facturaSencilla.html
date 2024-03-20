@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+
+    <style>
+        table {
+            border: 2px solid black;
+            border-spacing: 0;
+            border-collapse: separate;
+            margin: auto;
+            margin-top: 100px;
+            border-radius: 30px;
+        }
+
+        td,form {
+            border-collapse: collapse;
+            padding: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            margin: auto;
+        }
+
+        .negrita {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .alinearDer {
+            text-align: right;
+        }
+
+        .bordeInf {
+            border-bottom: 2px solid black;
+        }
+
+        .borderDer {
+            border-right: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" name="formu1" id="form">
+        <fieldset>
+            <legend>Datos de la factura</legend>
+            <label for="description">Descripcion</label>
+            <input type="text" name="txtDescription" id="txtDescription" autofocus>
+            <br>
+
+            <label for="precio">precio</label>
+            <input type="text" id="txtPrecio" name="txtPrecio">
+            <br>
+
+            <label for="cantidad">Cantidad</label>
+            <input type="text" name="txtCantidad" id="txtCantidad">
+            <br>
+            
+            <label for="date">Fecha</label>
+            <input type="date" name="date" id="date">
+        </fieldset>
+        <input type="button" value="Enviar" onclick="pintar()">
+    </form>
+
+    <div id="box" style="visibility: hidden">
+        <table>
+            <tr>
+                <td id="description" class="negrita bordeInf" style="font-size: 40px; text-align: center;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="negrita bordeInf borderDer">Precio</td>
+                <td id="price" class="alinearDer bordeInf"></td>
+            </tr>
+            <tr>
+                <td class="negrita bordeInf borderDer">Unidades</td>
+                <td id="units" class="alinearDer bordeInf"></td>
+            </tr>
+            <tr>
+                <td class="negrita bordeInf borderDer">Subtotal</td>
+                <td id="subtotal" class="alinearDer bordeInf"></td>
+            </tr>
+            <tr>
+                <td class="negrita bordeInf borderDer">20% descuento</td>
+                <td id="descuento" class="alinearDer bordeInf"></td>
+            </tr>
+            <tr>
+                <td class="negrita bordeInf borderDer">Base imponible</td>
+                <td id="baseIm" class="alinearDer bordeInf"></td>
+            </tr>
+            <tr>
+                <td class="negrita bordeInf borderDer">21% IVA</td>
+                <td id="iva" class="alinearDer bordeInf"></td>
+            </tr>
+            <tr>
+                <td class="negrita borderDer bordeInf">Fecha</td>
+                <td id="fecha" class="alinearDer bordeInf"></td>
+            </tr>
+            <tr>
+                <td class="negrita borderDer">TOTAL</td>
+                <td id="total" class="alinearDer"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let color = "color"
+        // function colores() {
+        //     color = "colores";
+        //     alert(color);
+        // }
+
+        // colores();
+        // alert(color);
+
+
+
+        function pintar() {
+            const ivaActual = 0.21;
+            const descuentoActual = 0.2;
+
+            let description = document.getElementById("txtDescription").value;
+            let price = document.getElementById("txtPrecio").value;
+            let units = document.getElementById("txtCantidad").value;
+            let subtotal = price * units;
+            let descuento = subtotal * descuentoActual;
+            let baseIm = subtotal - descuento;
+            let iva = baseIm * ivaActual;
+            let total = parseInt(baseIm) + iva;
+
+            let descriptionElem = document.getElementById("description");
+            let priceElem = document.getElementById("price");
+            let unitsElem = document.getElementById("units");
+            let subtotalElem = document.getElementById("subtotal");
+            let descuentoElem = document.getElementById("descuento");
+            let baseImEleme = document.getElementById("baseIm");
+            let ivaElem = document.getElementById("iva");
+            let totalElem = document.getElementById("total");
+            
+
+            let box = document.getElementById("box");
+            let form = document.getElementById("form");
+
+            descriptionElem.innerHTML = description;
+            priceElem.innerHTML = price;
+            unitsElem.innerHTML = units;
+            subtotalElem.innerHTML = subtotal + " €";
+            descuentoElem.innerHTML = descuento;
+            baseImEleme.innerHTML = baseIm;
+            ivaElem.innerHTML = iva;
+            totalElem.innerHTML = total;
+            
+            box.style.visibility="inherit";
+            form.style.visibility="hidden";
+        }
+
+
+
+        // let description = prompt("Descripcion del producto");
+        // let price = prompt("Precio del producto");
+        // let units = prompt("Unidades a comprar");
+    </script>
+</body>
+
+</html>

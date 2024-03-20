@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio cajero</title>
+</head>
+
+<!-- Ejercicio cajero automatico
+
+        Que pida una cantidad y descomponga en los siguientes numeros:
+
+        billete de 50:
+        billete de 20:
+        billete de 10:
+        billete de 5:
+        moneda de 2:
+        moneda de 1:
+    -->
+
+<body>
+
+
+    <form action="">
+        <fieldset>
+            <legend>Cajero automatico</legend>
+            <input type="number" name="dinero" id="dinero">
+        </fieldset>
+
+        <input type="button" onclick="descomponer()" value="Sacar dinero">
+
+    </form>
+
+    <label for="billetes50">Billetes de 50</label>
+    <input type="text" id="billetes50">
+    <br>
+
+    <label for="billetes20">Billetes de 20</label>
+    <input type="text" id="billetes20">
+    <br>
+
+    <label for="billetes10">Billetes de 10</label>
+    <input type="text" id="billetes10">
+    <br>
+
+    <label for="billetes5">Billetes de 5</label>
+    <input type="text" id="billetes5">
+    <br>
+
+    <label for="monedas2">Monedas de 2</label>
+    <input type="text" id="monedas2">
+    <br>
+
+    <label for="monedas1">Monedas de 1</label>
+    <input type="text" id="monedas1">
+    <br>
+
+
+
+    <script>
+
+
+        function descomponer() {
+            let dinero = document.getElementById("dinero").value;
+
+            let billetes50_Out = document.getElementById("billetes50");
+            let billetes20_Out = document.getElementById("billetes20");
+            let billetes10_Out = document.getElementById("billetes10");
+            let billetes5_Out = document.getElementById("billetes5");
+            let monedas2_Out = document.getElementById("monedas2");
+            let monedas1_Out = document.getElementById("monedas1");
+
+            let billetes50;
+            let billetes20;
+            let billetes10;
+            let billetes5;
+            let monedas2;
+            let monedas1;
+
+            let dineroRestante;
+
+            billetes50 = parseInt(dinero / 50);
+            dinero %= 50;
+
+            billetes20 = parseInt(dinero / 20);
+            dinero %=  20;
+
+            billetes10 = parseInt(dinero / 10);
+            dinero %= 10;
+
+            billetes5 = parseInt(dinero / 5);
+            dinero %= 5;
+
+            monedas2 = parseInt(dinero / 2);
+            dinero %= 2;
+
+            monedas1 = dinero;
+
+            // alert("50: " + billetes50 + ". 20: " + billetes20 + ". 10:" + billetes10 +
+            //     ". 5" + billetes5 + ". 2" + monedas2 + ". 1:" + monedas1);
+
+            billetes50_Out.value=billetes50;
+            billetes20_Out.value=billetes20;
+            billetes10_Out.value=billetes10;
+            billetes5_Out.value=billetes5;
+            monedas2_Out.value=monedas2;
+            monedas1_Out.value=monedas1;
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

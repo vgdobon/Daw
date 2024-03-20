@@ -1,0 +1,11 @@
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\bin\Debug\ArraysForms.exe.config
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\bin\Debug\ArraysForms.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\bin\Debug\ArraysForms.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.csproj.AssemblyReference.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.Form1.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.Properties.Resources.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.csproj.GenerateResource.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.csproj.CoreCompileInputs.cache
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.exe
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.pdb
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\ArraysForms\ArraysForms\obj\Debug\ArraysForms.FormateoString.resources

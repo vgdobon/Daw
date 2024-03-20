@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Arrays</title>
+</head>
+
+<body>
+
+
+    <button onclick="creaNumeros()" value="">Crear números</button>
+    <button onclick="contarVocales()" value="">Contar vocales</button>
+    <p id="salida"></p>
+
+    <script>
+        let salida = document.getElementById("salida");
+
+        function creaNumeros() {
+            let numeros = [];
+            let suma=0;
+            let promedio=0;
+            let randomNum;
+            let numerosPares=0;
+            let numerosImpares=0;
+            
+
+            for (let i = 0; i < 7; i++) {
+                randomNum = Math.floor(Math.random() * 10);
+                numeros[i] = randomNum;
+                suma += randomNum;
+                if(randomNum%2 == 0){
+                    numerosPares++;
+                }else{
+                    numerosImpares++;
+                }
+            }
+
+            
+
+            promedio = (suma / 7).toFixed(3);
+            salida.innerHTML = "Los numeros son: " + numeros + 
+                            ".\n La suma de los números es: " + suma +
+                            ".\n El promedio es: " + promedio + 
+                            ".\n Hay " + numerosPares + " números pares" + 
+                            ".\n  Hay " + numerosImpares + " números impares";
+
+        }
+        function contarVocales() {
+            
+            let frase = prompt("Dime una frase").toLocaleLowerCase();
+            let vocalesA=['a','á'];
+            let vocalesE=['e','é'];
+            let vocalesI=['i','í'];
+            let vocalesO=['o','ó'];
+            let vocalesU=['u','ú'];
+            let suma=0;
+            let cantidadVocales=0;
+            let cantidadVocalesA=0;
+            let cantidadVocalesE=0;
+            let cantidadVocalesI=0;
+            let cantidadVocalesO=0;
+            let cantidadVocalesU=0;
+        
+            for (let i = 0; i < frase.length; i++) {
+                vocalesA.forEach(element => {
+                    if(frase.charAt(i) == element){
+                        cantidadVocalesA++;
+                        cantidadVocales++;
+                    }
+                });
+                vocalesE.forEach(element => {
+                    if(frase.charAt(i) == element){
+                        cantidadVocalesE++;
+                        cantidadVocales++;
+                    }
+                });
+                vocalesI.forEach(element => {
+                    if(frase.charAt(i) == element){
+                        cantidadVocalesI++;
+                        cantidadVocales++;
+                    }
+                });
+                vocalesO.forEach(element => {
+                    if(frase.charAt(i) == element){
+                        cantidadVocalesO++;
+                        cantidadVocales++;
+                    }
+                });
+                vocalesU.forEach(element => {
+                    if(frase.charAt(i) == element){
+                        cantidadVocalesU++;
+                        cantidadVocales++;
+                    }
+                });
+                
+            }
+
+            
+            salida.innerHTML = "En la frase: \"" + frase + "\" hay " + cantidadVocales + " vocales." + 
+                                "\n A:" + cantidadVocalesA +
+                                "\n E:" +  cantidadVocalesE +
+                                "\n I:" + cantidadVocalesI +
+                                "\n O:" + cantidadVocalesO +
+                                "\n U:" + cantidadVocalesU;
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudades</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+
+        #header {
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            padding-left: 40%;
+            height: 38px;
+        }
+
+        ul,ol {
+            list-style: none;
+        }
+
+        .nav li a {
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .nav>li {
+            float: left;
+        }
+
+        .nav li a:hover {
+            background-color: rgb(95, 95, 95);
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 140px;
+        }
+
+        .nav li:hover>ul {
+            display: block;
+        }
+
+        #divImagen {
+            margin: auto;
+            margin-top: 50px;
+            width: 80%;
+            height: 400px;
+        }
+
+        #imagen {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <ul class="nav">
+            <li id="prov"><a href="">Provincias</a>
+                <ul id="provincias">
+                    <li><a href="#" id="zgz">Zaragoza</a></li>
+                    <li><a href="#" id="trl">Teruel</a></li>
+                    <li><a href="#" id="hsc">Huesca</a></li>
+                </ul>
+            </li>
+            <li id="prov"><a href="" id="">Pueblos</a>
+                <ul id="pueblos">
+                    <li><a href="#" id="primero">Calatayud</a></li>
+                    <li><a href="#" id="segundo">Ejea de los Caballeros</a></li>
+                    <li><a href="#" id="tercero">Tarazona</a></li>
+                </ul>
+
+            </li>
+
+        </ul>
+    </div>
+
+    <div id="divImagen">
+        <img src="images/Zaragoza.webp" alt="" id="imagen">
+    </div>
+
+
+
+    <script>
+        let primero = document.getElementById("primero");
+        let segundo = document.getElementById("segundo");
+        let tercero = document.getElementById("tercero");
+        let img = document.getElementById("imagen");
+        let contenedorProvincias = document.querySelector("#provincias");
+        let contenedorPueblos = document.querySelector("#pueblos");
+
+        const ruta = "./images/"
+
+        let localicadActual = '';
+
+        contenedorPueblos.addEventListener("click", (event) => {
+            seleccionarPueblo(event.target.id)
+        });
+
+        contenedorProvincias.addEventListener("click", (event) => {
+            seleccionarLocalidad(event.target.id)
+        });
+
+        function seleccionarPueblo(pueblo) {
+            //alert(pueblo);
+
+            if (localicadActual == 'zgz') {
+                switch (pueblo) {
+                    case 'primero':
+
+                        img.src = ruta + "calatayud.jpg";
+                        break;
+                    case 'segundo':
+
+                        img.src = ruta + "EJEA.jpg";
+                        break;
+                    case 'tercero':
+
+                        img.src = ruta + "tarazona.avif";
+                        break;
+                }
+            } else if (localicadActual == 'hsc') {
+                switch (pueblo) {
+                    case 'primero':
+                        img.src = ruta + "Jaca.jpg";
+                        break;
+                    case 'segundo':
+                        img.src = ruta + "monzon.jpg";
+                        break;
+                    case 'tercero':
+                        img.src = ruta + "binefar.jpg";
+                        break;
+                }
+            } else {
+                switch (pueblo) {
+                    case 'primero':
+                        img.src = ruta + "Orrios.jpg";
+                        break;
+
+                    case 'segundo':
+                        img.src = ruta + "libros.jpeg";
+                        break;
+
+                    case 'tercero':
+                        img.src = ruta + "moraderubielos.jpg";
+                        break;
+                }
+            }
+        }
+
+
+
+        function seleccionarLocalidad(localicad) {
+
+            localicadActual = localicad;
+
+            switch (localicad) {
+                case 'zgz':
+                    primero.innerText = "Calatayud";
+                    segundo.innerText = "Ejea de los Caballeros";
+                    tercero.innerText = "Tarazona";
+                    img.src = "images/Zaragoza.webp";
+                    break;
+
+                case 'hsc':
+                    primero.innerText = "Jaca";
+                    segundo.innerText = "Monzon";
+                    tercero.innerText = "Binefar";
+                    img.src = "images/huesca.jpeg";
+                    break;
+
+                case 'trl':
+                    primero.innerText = "Orrios";
+                    segundo.innerText = "Libros";
+                    tercero.innerText = "Mora de Rubielos";
+                    img.src = "images/teruel.jpg";
+                    break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante opciones tipo radio</title>
+
+    <style>
+        #carta {
+            margin: auto;
+            width: 75%;
+            border: 1px solid black;
+        }
+
+        table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td {
+            height: 200px;
+            width: 400px;
+        }
+
+        img {
+            height: 300px;
+        }
+
+        fieldset {}
+    </style>
+</head>
+
+<body>
+
+
+    <div id="carta">
+        <h1>Restaurante El mañico</h1>
+        <table>
+            <tr>
+                <td>
+                    <fieldset id="fsPrimeros">
+                        <legend>Primeros</legend>
+                        <input type="radio" name="rbtPimeros" id="rbtEnsalada"
+                            value="8.99#images/platos/ensaladaCesar.jpg">
+                        <label for="rbtEnsalada">Ensalada César 8,99€</label><br>
+                        <input type="radio" name="rbtPimeros" id="rbtMigas"
+                            value="12.99#images/platos/migasPastora.jpg">
+                        <label for="rbtMigas">Migas a la pastora 12,99€</label><br>
+                        <input type="radio" name="rbtPimeros" id="rbtSopa" value="9.99#images/platos/sopa.jpg">
+                        <label for="rbtSopa">Sopa de cocido 9,99€</label><br>
+                    </fieldset>
+                </td>
+                <td>
+                    <img src="images/acelga.jpg" id="imgPrimeros">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <fieldset id="fsSegundos">
+                        <legend>Segundos</legend>
+                        <input type="radio" name="rbtSegundos" id="rbtEnsalada"
+                            value="7.99#images/platos/polloNaranja.jpg">
+                        <label for="rbtEnsalada">Pollo a la naranja 7,99€</label><br>
+                        <input type="radio" name="rbtSegundos" id="rbtMigas"
+                            value="12.99#images/platos/bacalaoOrio.jpg">
+                        <label for="rbtMigas">Bacalao al Orio 12,99€</label><br>
+                        <input type="radio" name="rbtSegundos" id="rbtCarrillera"
+                            value="14.99#images/platos/carrillera.jpg">
+                        <label for="rbtSopa">Carrillera Ternera 14,99€</label><br>
+                    </fieldset>
+                </td>
+                <td>
+                    <img src="images/acelga.jpg" alt="" id="imgSegundos">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Total a pagar:</td>
+                <td id="salida">0 €</td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    </div>
+
+
+
+
+    <script>
+        let sumaPrimeros = 0;
+        let sumaSegundos = 0;
+        let suma=0;
+    
+        let imagePrimeros = document.getElementById("imgPrimeros");
+        let imageSegundos = document.getElementById("imgSegundos");
+        let primeros = document.querySelectorAll('input[name="rbtPimeros"]');
+        let segundos = document.querySelectorAll('input[name="rbtSegundos"]');
+        let salida = document.getElementById("salida");
+
+        primeros.forEach((elem) => {
+            elem.addEventListener("change", (event) => {
+                sumarPrecioPrimeros(event)
+            });
+        });
+
+        segundos.forEach((elem) => {
+            elem.addEventListener("change", (event) => {
+                sumarPrecioSegundos(event)
+            });
+        });
+
+        function sumarPrecioPrimeros(event) {
+            let primerosInfo = event.target.value.split("#");
+            sumaPrimeros= parseFloat(primerosInfo[0]);
+            cambiarImagen(primerosInfo[1],imagePrimeros);
+            hacerSuma();
+        }
+
+        function sumarPrecioSegundos(event) {
+            let segundosInfo = event.target.value.split("#")
+            sumaSegundos= parseFloat(segundosInfo[0]);
+            cambiarImagen(segundosInfo[1],imageSegundos);
+            hacerSuma();        }
+
+        function cambiarImagen(src,elem){
+            elem.src = src;
+        }
+
+        function hacerSuma(){
+            suma = sumaPrimeros + sumaSegundos;
+            salida.innerHTML = suma;
+        }
+
+        /*
+
+        function hacerCuenta() {
+            let opcionPrimeros = document.getElementsByName("rbtPimeros");
+            let opcionSegundos = document.getElementsByName("rbtSegundos");
+            let suma = 0;
+
+            for (let i = 0; i < opcionPrimeros.length; i++) {
+                const element = opcionPrimeros[i];
+
+                if (element.checked) {
+                    suma += parseFloat(element.value);
+                }
+            }
+
+            for (let i = 0; i < opcionSegundos.length; i++) {
+                const element = opcionSegundos[i];
+
+                if (element.checked) {
+                    suma += parseFloat(element.value);
+                }
+            }
+
+            document.getElementById("salida").innerHTML = suma;
+
+        }*/
+
+    </script>
+</body>
+
+</html>

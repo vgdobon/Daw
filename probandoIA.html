@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form onsubmit="return validateForm()">
+    <label for="campo1">Correo electrónico</label>
+    <input type="email" id="campo1" name="campo1" required>
+    
+    <label for="campo2">Numero de teléfono</label>
+    <input type="text" id="campo2" name="campo2" required>
+    
+    <label for="opciones">Opciones:</label>
+    <select id="opciones" name="opciones">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    
+    <input type="submit" value="Enviar">
+</form>
+
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    label {
+        margin-bottom: 10px;
+    }
+    
+    input[type="email"], input[type="text"], select {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+function validateForm() {
+    var campo1 = document.getElementById("campo1").value;
+    var campo2 = document.getElementById("campo2").value;
+    
+    if (campo1 === "" || campo2 === "") {
+        alert("Los campos no pueden estar vacíos");
+        return false;
+    }
+    
+    // Validar campo1 como correo electrónico válido
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(campo1)) {
+        alert("Campo 1 debe ser un correo electrónico válido");
+        return false;
+    }
+    
+    // Validar campo2 como número de teléfono válido para España
+    var phoneRegex = /^(?:(?:\+|00)34)?(?:6\d{8}|9\d{8}|\d{9})$/;
+    if (!phoneRegex.test(campo2)) {
+        alert("Campo 2 debe ser un número de teléfono válido para España");
+        return false;
+    }
+    
+    return true;
+}
+
+    
+</script>
+    
+</script>
+</body>
+</html>
