@@ -1,0 +1,29 @@
+﻿@model ProbarMVC.Models.RespuestaInvitados
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gracias</title>
+</head>
+<body>
+    <div>
+        <h1>Gracias @Model.Nombre por tu respuesta</h1>
+        @if (Model.Confirmacion_Asistencia == true)
+        {
+            @: Nos alegramos de que vengas. ¡Las bebidas están en la nevera!
+
+        }
+        else
+        {
+            @: Sentimos que no puedas venir, nos veremos en otra ocasión.
+        }
+
+    </div>
+</body>
+</html>

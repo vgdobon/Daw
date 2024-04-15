@@ -1,0 +1,29 @@
+﻿@model ProbarMVC.Models.RespuestaInvitados
+
+@{
+    Layout = null;
+}
+
+<main>
+
+
+	<div>
+		@using (Html.BeginForm())
+		{
+			@Html.ValidationSummary()
+			<p>Nombre: @Html.TextBoxFor(x => x.Nombre)</p>
+			<p>Email: @Html.TextBoxFor(x => x.Email)</p>
+			<p>Phone: @Html.TextBoxFor(x => x.Phone)</p>
+			<p>
+				¿Vendrás a la fiesta? @Html.DropDownListFor(x => x.Confirmacion_Asistencia,
+			   new[] { new SelectListItem() {Text ="Si", Value=bool.TrueString },
+					   new SelectListItem(){ Text="No", Value = bool.FalseString},
+
+			   }, "Elige una opción")
+			</p>
+
+			<input / type="submit" value="Enviar">
+		}
+	</div>
+
+</main>
