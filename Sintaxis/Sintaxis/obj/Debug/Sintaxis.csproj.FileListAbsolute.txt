@@ -1,0 +1,7 @@
+C:\Users\Víctor\Daw\Sintaxis\Sintaxis\bin\Debug\Sintaxis.exe.config
+C:\Users\Víctor\Daw\Sintaxis\Sintaxis\bin\Debug\Sintaxis.exe
+C:\Users\Víctor\Daw\Sintaxis\Sintaxis\bin\Debug\Sintaxis.pdb
+C:\Users\Víctor\Daw\Sintaxis\Sintaxis\obj\Debug\Sintaxis.csproj.AssemblyReference.cache
+C:\Users\Víctor\Daw\Sintaxis\Sintaxis\obj\Debug\Sintaxis.csproj.CoreCompileInputs.cache
+C:\Users\Víctor\Daw\Sintaxis\Sintaxis\obj\Debug\Sintaxis.exe
+C:\Users\Víctor\Daw\Sintaxis\Sintaxis\obj\Debug\Sintaxis.pdb
